@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'FirstScreen.dart';
+import 'Login.dart';
 
 void main() {
-  runApp(const MaterialApp(
+  runApp( MaterialApp(
+     home: Login(),
     title: 'Doctor Appointment',
-    home: FirstScreen(),
+   // home: FirstScreen(),
+    
   ));
 }
-
-
-
