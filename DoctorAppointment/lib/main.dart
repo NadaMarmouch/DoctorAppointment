@@ -3,7 +3,7 @@ import 'screens/Login.dart';
 
 void main() {
   runApp( MaterialApp(
-     home: Login(),
+     home: LoginPage(),
     title: 'Doctor Appointment',
    // home: FirstScreen(),
     
