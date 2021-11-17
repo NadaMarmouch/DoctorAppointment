@@ -57,11 +57,10 @@ class _State extends State<Login> {
                     ),
                   ),
                 ),
-                FlatButton(
+                TextButton( //bdlha text button bs lma b7otha el text color by3mal error
                   onPressed: (){
                     //forgot password screen
                   },
-                  textColor: Colors.blue,
                   child: Text('Forgot Password'),
                 ),
                 Container(
