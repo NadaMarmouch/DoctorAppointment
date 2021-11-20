@@ -76,27 +76,6 @@ class _SignupPageState extends State<SignupPage> {
                     child: TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: 'Full Name',
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    height: 45,
-                    padding:
-                        EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(color: Colors.black12, blurRadius: 5)
-                        ]),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
                         hintText: 'Username',
                       ),
                     ),
@@ -119,6 +98,27 @@ class _SignupPageState extends State<SignupPage> {
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Email',
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width / 1.2,
+                    height: 45,
+                    padding:
+                        EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(color: Colors.black12, blurRadius: 5)
+                        ]),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'phonenumber',
                       ),
                     ),
                   ),
