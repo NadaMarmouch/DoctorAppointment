@@ -170,12 +170,12 @@ class _LoginPageState extends State<LoginPage> {
                         )
                       ),
                       child: Center(
-                        child: Text('Login'.toUpperCase(),
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold
-                          ),
-                        ),
+                         child: TextButton(child:Text('LOGIN'),
+                        style: TextButton.styleFrom(primary: Colors.white),
+                       // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                        onPressed:(){ 
+                          Navigator.pushNamed(context, '/home');
+                        })
                       ),
                     ),
                   ),
@@ -194,7 +194,8 @@ class _LoginPageState extends State<LoginPage> {
                 ], 
               ),
               onTap: (){
-                Navigator.pushNamed(context, '/signup');
+                Navigator.pop(context);
+               Navigator.pushNamed(context,'/' );
               },
             ),           
           ],

@@ -7,10 +7,14 @@ import 'screens/Firstscreen.dart';
 
 void main() {
   runApp( MaterialApp(
-   //  home: SignupPage(),
     title: 'Doctor Appointment',
   // home: FirstScreen(),
-    home: HomePage(),
-    
+   // home: SignupPage(),
+   // home: HomePage(),
+    routes: {
+'/': (context) => SignupPage(),
+'/login': (context) => LoginPage(),
+'/home': (context) => HomePage(),
+},
   ));
 }

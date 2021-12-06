@@ -165,9 +165,9 @@ class HomePageState extends State<HomePage> {
                 children: [
                   demoCategories("assets/tooth.png", "Dentisty", "10 Doctors"),
                   demoCategories("assets/brain.png", "Neurology", "5 Doctors"),
-                  demoCategories("assets/heart.png", "Dermatology", "4 Doctors"),
+                  demoCategories("assets/Dermatology.jpg", "Dermatology", "4 Doctors"),
                   demoCategories("assets/bone.png", "Orthopedics", "4 Doctors"),
-                  demoCategories("assets/bone.png", "Audilogy", "6 Doctors"),
+                  demoCategories("assets/Audilogy.jpg", "Audilogy", "6 Doctors"),
                   
                 ],
               ),
@@ -203,7 +203,10 @@ class HomePageState extends State<HomePage> {
   }
 //style color for the category of doctors
   Widget demoCategories(String img, String name, String drCount) {
-    return Container(
+    return GestureDetector(
+  onTap: () {Navigator.pushNamed(context, "/login"); },
+    child:Container(
+      
       width: 100,
       margin: EdgeInsets.only(right: 15),
       decoration: BoxDecoration(
@@ -217,7 +220,7 @@ class HomePageState extends State<HomePage> {
           Container(
             child: Image.asset(img),
           ),
-          Container(
+          Container( 
             margin: EdgeInsets.only(top: 10),
             child: Text(
               name,
@@ -247,6 +250,7 @@ class HomePageState extends State<HomePage> {
           ),
         ],
       ),
+    )
     );
   }
 
