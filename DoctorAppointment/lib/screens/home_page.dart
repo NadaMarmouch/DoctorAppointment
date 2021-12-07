@@ -17,27 +17,57 @@ class HomePageState extends State<HomePage> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xFF00abff),
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Color(0xFF00abff),
-        centerTitle: true,
-        leading: Icon(
-          Icons.menu,
-          color: Colors.white,
-        ),
-        actions: [
-          GestureDetector(
-            child: Container(
-              margin: EdgeInsets.only(right: 10),
-              child: Icon(
-                Icons.notifications_rounded,
-                color: Colors.white,
+         drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
               ),
+              child: Text('UserrName'),
             ),
-          ),
-         
-        ],
+            ListTile(
+              title: const Text('Profile'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Rate'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Logout'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+        
+          ],
+        ),
       ),
+      appBar: AppBar(
+        title: Text('jkgfjfk'),
+         elevation: 0.0,
+         backgroundColor: Color(0xFF00abff),
+         centerTitle: true,
+        ),
+        
+        // actions: [
+        //   GestureDetector(
+        //     child: Container(
+        //       margin: EdgeInsets.only(right: 10),
+        //       child: Icon(
+        //         Icons.notifications_rounded,
+        //         color: Colors.white,
+        //       ),
+        //     ),
+        //   ),
+        // ],
+      //),
       body: Container(
         decoration: BoxDecoration(
             color: Colors.grey[100],
@@ -165,9 +195,8 @@ class HomePageState extends State<HomePage> {
                 children: [
                   demoCategories("assets/tooth.png", "Dentisty", "10 Doctors"),
                   demoCategories("assets/brain.png", "Neurology", "5 Doctors"),
-                  demoCategories("assets/Dermatology.jpg", "Dermatology", "4 Doctors"),
-                  demoCategories("assets/bone.png", "Orthopedics", "4 Doctors"),
-                  demoCategories("assets/Audilogy.jpg", "Audilogy", "6 Doctors"),
+                  demoCategories("assets/bone.png", "Orthopedics", "5 Doctors"),
+                  demoCategories("assets/heart.png", "cardiology and vascular disease", "4 Doctors"),
                   
                 ],
               ),
@@ -204,7 +233,7 @@ class HomePageState extends State<HomePage> {
 //style color for the category of doctors
   Widget demoCategories(String img, String name, String drCount) {
     return GestureDetector(
-  onTap: () {Navigator.pushNamed(context, "/login"); },
+  onTap: () {Navigator.pushNamed(context, "/details"); },
     child:Container(
       
       width: 100,

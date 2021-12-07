@@ -163,7 +163,7 @@ class _SignupPageState extends State<SignupPage> {
                           ),
                           borderRadius: BorderRadius.all(Radius.circular(50))),
                       child: Center(
-                        child: TextButton(child:Text('signup'),
+                        child: TextButton(child:Text('Signup'),
                         style: TextButton.styleFrom(primary: Colors.white),
                        // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                         onPressed:(){ 

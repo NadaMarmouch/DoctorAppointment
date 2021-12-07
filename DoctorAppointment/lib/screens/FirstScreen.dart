@@ -11,16 +11,18 @@ class FirstScreen extends StatelessWidget {
         title: const Text('Doctor Appointment App'),
       ),
       body: Center(
-        child: ElevatedButton(
+        
+        child:ButtonBar(
+      children: [ ElevatedButton(
           child: const Text('Login'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) =>  LoginPage()),
-              
-            );
+           onPressed:(){  Navigator.pushNamed(context, '/login');
           },
-        ),
+        ),ElevatedButton(
+          child: const Text('Login'),
+           onPressed:(){  Navigator.pushNamed(context, '/login');
+          },
+        ),]
+        )
       ),
     );
   }

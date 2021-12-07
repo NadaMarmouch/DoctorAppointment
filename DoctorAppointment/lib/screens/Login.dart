@@ -153,7 +153,7 @@ class _LoginPageState extends State<LoginPage> {
 
                   InkWell(
                       onTap: (){
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/signup');
                       },
                       child: Container(
                       height: 45,
@@ -195,7 +195,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               onTap: (){
                 Navigator.pop(context);
-               Navigator.pushNamed(context,'/' );
+               Navigator.pushNamed(context,'/signup' );
               },
             ),           
           ],
