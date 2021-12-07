@@ -9,7 +9,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   @override
   void initState() {
     SystemChrome.setEnabledSystemUIOverlays([]);
@@ -24,159 +23,128 @@ class _LoginPageState extends State<LoginPage> {
           children: <Widget>[
             Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height/3.5,
+              height: MediaQuery.of(context).size.height / 3.5,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Color(0xff6bceff),
-                    Color(0xff6bceff)
-                  ],
-                ),
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(90)
-                )
-              ),
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [Color(0xff6bceff), Color(0xff6bceff)],
+                  ),
+                  borderRadius:
+                      BorderRadius.only(bottomLeft: Radius.circular(90))),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Spacer(),
                   Align(
                     alignment: Alignment.center,
-                    child: Icon(Icons.person,
+                    child: Icon(
+                      Icons.person,
                       size: 90,
                       color: Colors.white,
                     ),
                   ),
                   Spacer(),
-
                   Align(
                     alignment: Alignment.bottomRight,
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                          bottom: 32,
-                          right: 32
-                        ),
-                        child: Text('Login',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18
-                          ),
-                        ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 32, right: 32),
+                      child: Text(
+                        'Login',
+                        style: TextStyle(color: Colors.white, fontSize: 18),
                       ),
+                    ),
                   ),
                 ],
               ),
             ),
-
             Container(
-              height: MediaQuery.of(context).size.height/2,
+              height: MediaQuery.of(context).size.height / 2,
               width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.only(top: 62),
               child: Column(
                 children: <Widget>[
                   Container(
-                    width: MediaQuery.of(context).size.width/1.2,
+                    width: MediaQuery.of(context).size.width / 1.2,
                     height: 45,
-                    padding: EdgeInsets.only(
-                      top: 4,left: 16, right: 16, bottom: 4
-                    ),
+                    padding:
+                        EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(50)
-                      ),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black12,
-                          blurRadius: 5
-                        )
-                      ]
-                    ),
+                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(color: Colors.black12, blurRadius: 5)
+                        ]),
                     child: TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        icon: Icon(Icons.person,
-                            color: Color(0xff6bceff),
+                        icon: Icon(
+                          Icons.person,
+                          color: Color(0xff6bceff),
                         ),
-                          hintText: 'Username',
+                        hintText: 'Username',
                       ),
                     ),
                   ),
-                  
                   Container(
-                    width: MediaQuery.of(context).size.width/1.2,
+                    width: MediaQuery.of(context).size.width / 1.2,
                     height: 45,
                     margin: EdgeInsets.only(top: 32),
-                    padding: EdgeInsets.only(
-                        top: 4,left: 16, right: 16, bottom: 4
-                    ),
+                    padding:
+                        EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                            Radius.circular(50)
-                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(50)),
                         color: Colors.white,
                         boxShadow: [
-                          BoxShadow(
-                              color: Colors.black12,
-                              blurRadius: 5
-                          )
-                        ]
-                    ),
+                          BoxShadow(color: Colors.black12, blurRadius: 5)
+                        ]),
                     child: TextField(
                       obscureText: true,
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        icon: Icon(Icons.vpn_key,
+                        icon: Icon(
+                          Icons.vpn_key,
                           color: Color(0xff6bceff),
                         ),
                         hintText: 'Password',
                       ),
                     ),
                   ),
-
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
-                      padding: const EdgeInsets.only(
-                        top: 16, right: 32
-                      ),
-                      child: Text('Forgot Password ?',
-                        style: TextStyle(
-                          color: Colors.grey
-                        ),
+                      padding: const EdgeInsets.only(top: 16, right: 32),
+                      child: Text(
+                        'Forgot Password ?',
+                        style: TextStyle(color: Colors.grey),
                       ),
                     ),
                   ),
                   Spacer(),
-
                   InkWell(
-                      onTap: (){
-                        Navigator.pushNamed(context, '/signup');
-                      },
-                      child: Container(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/signup');
+                    },
+                    child: Container(
                       height: 45,
-                      width: MediaQuery.of(context).size.width/1.2,
+                      width: MediaQuery.of(context).size.width / 1.2,
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            Color(0xff6bceff),
-                            Color(0xFF00abff),
-                          ],
-                        ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(50)
-                        )
-                      ),
+                          gradient: LinearGradient(
+                            colors: [
+                              Color(0xff6bceff),
+                              Color(0xFF00abff),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(50))),
                       child: Center(
-                         child: TextButton(child:Text('LOGIN'),
-                        style: TextButton.styleFrom(primary: Colors.white),
-                       // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                        onPressed:(){ 
-                          Navigator.pushNamed(context, '/home');
-                        })
-                      ),
+                          child: TextButton(
+                              child: Text('LOGIN'),
+                              style:
+                                  TextButton.styleFrom(primary: Colors.white),
+                              // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/home');
+                              })),
                     ),
                   ),
                 ],
@@ -189,17 +157,19 @@ class _LoginPageState extends State<LoginPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text("Dnon't have an account ?"),
-                  Text("Sign Up",style: TextStyle(color: Color(0xff6bceff)),),
-                ], 
+                  Text("Don't have an account ?"),
+                  Text(
+                    "Sign Up",
+                    style: TextStyle(color: Color(0xff6bceff)),
+                  ),
+                ],
               ),
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
-               Navigator.pushNamed(context,'/signup' );
+                Navigator.pushNamed(context, '/signup');
               },
-            ),           
+            ),
           ],
-          
         ),
       ),
     );
