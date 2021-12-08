@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:doctor_appointment/screens/doctor_details.dart';
 
-
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => HomePageState();
 }
@@ -17,7 +18,7 @@ class HomePageState extends State<HomePage> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xFF00abff),
-         drawer: Drawer(
+      drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -25,12 +26,18 @@ class HomePageState extends State<HomePage> {
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text('UserrName'),
+              child: Text('User Name'),
             ),
             ListTile(
-              title: const Text('Profile'),
+              title: const Text('Home page'),
               onTap: () {
                 Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Edit Profile'),
+              onTap: () {
+                Navigator.pushNamed(context, '/editprofile');
               },
             ),
             ListTile(
@@ -45,28 +52,27 @@ class HomePageState extends State<HomePage> {
                 Navigator.pop(context);
               },
             ),
-        
           ],
         ),
       ),
       appBar: AppBar(
-        title: Text('jkgfjfk'),
-         elevation: 0.0,
-         backgroundColor: Color(0xFF00abff),
-         centerTitle: true,
-        ),
-        
-        // actions: [
-        //   GestureDetector(
-        //     child: Container(
-        //       margin: EdgeInsets.only(right: 10),
-        //       child: Icon(
-        //         Icons.notifications_rounded,
-        //         color: Colors.white,
-        //       ),
-        //     ),
-        //   ),
-        // ],
+        title: Text('Home Page'),
+        elevation: 0.0,
+        backgroundColor: Color(0xFF00abff),
+        centerTitle: true,
+      ),
+
+      // actions: [
+      //   GestureDetector(
+      //     child: Container(
+      //       margin: EdgeInsets.only(right: 10),
+      //       child: Icon(
+      //         Icons.notifications_rounded,
+      //         color: Colors.white,
+      //       ),
+      //     ),
+      //   ),
+      // ],
       //),
       body: Container(
         decoration: BoxDecoration(
@@ -125,7 +131,8 @@ class HomePageState extends State<HomePage> {
                       child: TextField(
                         maxLines: 1,
                         autofocus: false,
-                        style: TextStyle(color: Color(0xFF00abff), fontSize: 20),
+                        style:
+                            TextStyle(color: Color(0xFF00abff), fontSize: 20),
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Search..',
@@ -196,12 +203,12 @@ class HomePageState extends State<HomePage> {
                   demoCategories("assets/tooth.png", "Dentisty", "10 Doctors"),
                   demoCategories("assets/brain.png", "Neurology", "5 Doctors"),
                   demoCategories("assets/bone.png", "Orthopedics", "5 Doctors"),
-                  demoCategories("assets/heart.png", "cardiology and vascular disease", "4 Doctors"),
-                  
+                  demoCategories("assets/heart.png",
+                      "cardiology and vascular disease", "4 Doctors"),
                 ],
               ),
             ),
-             Container(
+            Container(
               margin: EdgeInsets.only(top: 5, left: 20),
               child: Text(
                 "About Us",
@@ -213,7 +220,7 @@ class HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-             Container(
+            Container(
               margin: EdgeInsets.only(top: 5, left: 20),
               child: Text(
                 "using this app will save time for the patient to choose the suitable doctor for her desires and his/her location. So from our app, you can book a doctor appointment, schedule follow up teleconsultations, book doctors home visits, all at the click of a button",
@@ -230,57 +237,57 @@ class HomePageState extends State<HomePage> {
       ),
     );
   }
+
 //style color for the category of doctors
   Widget demoCategories(String img, String name, String drCount) {
     return GestureDetector(
-  onTap: () {Navigator.pushNamed(context, "/details"); },
-    child:Container(
-      
-      width: 100,
-      margin: EdgeInsets.only(right: 15),
-      decoration: BoxDecoration(
-        color: Color(0xFF0077c6),//box color
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            child: Image.asset(img),
+        onTap: () {
+          Navigator.pushNamed(context, "/details");
+        },
+        child: Container(
+          width: 100,
+          margin: EdgeInsets.only(right: 15),
+          decoration: BoxDecoration(
+            color: Color(0xFF0077c6), //box color
+            borderRadius: BorderRadius.circular(10),
           ),
-          Container( 
-            margin: EdgeInsets.only(top: 10),
-            child: Text(
-              name,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 13,
-                fontFamily: 'Roboto',
-                fontWeight: FontWeight.w500,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                child: Image.asset(img),
               ),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 10),
-            padding: EdgeInsets.all(7),
-            decoration: BoxDecoration(
-              color: Color(0xffd9fffa).withOpacity(0.07),
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: Text(
-              drCount,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 8,
-                fontFamily: 'Roboto',
+              Container(
+                margin: EdgeInsets.only(top: 10),
+                child: Text(
+                  name,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 13,
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
               ),
-            ),
+              Container(
+                margin: EdgeInsets.only(top: 10),
+                padding: EdgeInsets.all(7),
+                decoration: BoxDecoration(
+                  color: Color(0xffd9fffa).withOpacity(0.07),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Text(
+                  drCount,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 8,
+                    fontFamily: 'Roboto',
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
-    )
-    );
+        ));
   }
-
 }
