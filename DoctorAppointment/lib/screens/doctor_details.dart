@@ -16,6 +16,7 @@ class _DoctorDetailState extends State<DoctorDetailPage> {
   Widget initWidget(BuildContext context) {
     return Scaffold(
       
+      
     );
 }
 }

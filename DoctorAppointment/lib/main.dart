@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:doctor_appointment/screens/FirstScreen.dart';
 import 'package:doctor_appointment/screens/Signup.dart';
 import 'package:doctor_appointment/screens/home_page.dart';
 import 'package:doctor_appointment/screens/doctor_details.dart';

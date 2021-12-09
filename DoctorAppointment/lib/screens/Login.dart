@@ -12,7 +12,6 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   void initState() {
-    SystemChrome.setEnabledSystemUIOverlays([]);
     super.initState();
   }
 
@@ -153,7 +152,7 @@ class _LoginPageState extends State<LoginPage> {
 
                   InkWell(
                       onTap: (){
-                        Navigator.pushNamed(context, '/signup');
+                        Navigator.pushNamed(context, '/');
                       },
                       child: Container(
                       height: 45,
@@ -189,13 +188,13 @@ class _LoginPageState extends State<LoginPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text("Dnon't have an account ?"),
+                  Text("Don't have an account ?"),
                   Text("Sign Up",style: TextStyle(color: Color(0xff6bceff)),),
                 ], 
               ),
               onTap: (){
                 Navigator.pop(context);
-               Navigator.pushNamed(context,'/signup' );
+               Navigator.pushNamed(context,'/' );
               },
             ),           
           ],

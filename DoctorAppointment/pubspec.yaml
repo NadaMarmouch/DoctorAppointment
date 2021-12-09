@@ -66,6 +66,8 @@ flutter:
     - assets/brain.png
     - assets/Audilogy.jpg
     - assets/Dermatology.jpg
+    - assets/cardiology.PNG
+    - assets/Neurology.PNG
      
 
   # An image asset can refer to one or more resolution-specific "variants", see

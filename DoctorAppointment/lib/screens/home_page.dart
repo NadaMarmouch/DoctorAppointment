@@ -50,24 +50,13 @@ class HomePageState extends State<HomePage> {
         ),
       ),
       appBar: AppBar(
-        title: Text('jkgfjfk'),
+        title: Text('Doctor Appointment'),
          elevation: 0.0,
          backgroundColor: Color(0xFF00abff),
          centerTitle: true,
-        ),
         
-        // actions: [
-        //   GestureDetector(
-        //     child: Container(
-        //       margin: EdgeInsets.only(right: 10),
-        //       child: Icon(
-        //         Icons.notifications_rounded,
-        //         color: Colors.white,
-        //       ),
-        //     ),
-        //   ),
-        // ],
-      //),
+      
+    ),
       body: Container(
         decoration: BoxDecoration(
             color: Colors.grey[100],
@@ -77,6 +66,7 @@ class HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            
             Container(
               margin: EdgeInsets.only(top: 20, left: 20),
               child: Text(
@@ -170,20 +160,7 @@ class HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(right: 20, top: 1),
-                    child: Align(
-                      alignment: Alignment.centerRight,
-                      child: Text(
-                        'See all',
-                        style: TextStyle(
-                          color: Color(0xff5e5d5d),
-                          fontSize: 19,
-                          fontFamily: 'Roboto',
-                        ),
-                      ),
-                    ),
-                  )
+                    
                 ],
               ),
             ),
@@ -193,10 +170,10 @@ class HomePageState extends State<HomePage> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  demoCategories("assets/tooth.png", "Dentisty", "10 Doctors"),
-                  demoCategories("assets/brain.png", "Neurology", "5 Doctors"),
-                  demoCategories("assets/bone.png", "Orthopedics", "5 Doctors"),
-                  demoCategories("assets/heart.png", "cardiology and vascular disease", "4 Doctors"),
+                  Categories("assets/tooth.png", "Dentisty", "10 Doctors"),
+                  Categories("assets/brain.png", "Neurology", "5 Doctors"),
+                  Categories("assets/bone.png", "Orthopedics", "5 Doctors"),
+                  Categories("assets/heart.png", "cardiology and vascular disease", "4 Doctors"),
                   
                 ],
               ),
@@ -204,34 +181,22 @@ class HomePageState extends State<HomePage> {
              Container(
               margin: EdgeInsets.only(top: 5, left: 20),
               child: Text(
-                "About Us",
+                "Top Rated",
                 style: TextStyle(
                   color: Color(0xff363636),
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  fontFamily: 'Roboto',
                 ),
               ),
             ),
-             Container(
-              margin: EdgeInsets.only(top: 5, left: 20),
-              child: Text(
-                "using this app will save time for the patient to choose the suitable doctor for her desires and his/her location. So from our app, you can book a doctor appointment, schedule follow up teleconsultations, book doctors home visits, all at the click of a button",
-                style: TextStyle(
-                  color: Color(0xff363636),
-                  fontSize: 12,
-                  fontWeight: FontWeight.normal,
-                  fontFamily: 'Roboto',
-                ),
-              ),
-            ),
+        
           ],
         ),
       ),
     );
   }
 //style color for the category of doctors
-  Widget demoCategories(String img, String name, String drCount) {
+  Widget Categories(String img, String name, String drCount) {
     return GestureDetector(
   onTap: () {Navigator.pushNamed(context, "/details"); },
     child:Container(
@@ -282,5 +247,4 @@ class HomePageState extends State<HomePage> {
     )
     );
   }
-
 }
