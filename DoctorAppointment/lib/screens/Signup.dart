@@ -118,7 +118,7 @@ class _SignupPageState extends State<SignupPage> {
                     child: TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: 'phonenumber',
+                        hintText: 'Phone number',
                       ),
                     ),
                   ),
@@ -163,18 +163,20 @@ class _SignupPageState extends State<SignupPage> {
                           ),
                           borderRadius: BorderRadius.all(Radius.circular(50))),
                       child: Center(
-                        child: TextButton(child:Text('Signup'),
-                        style: TextButton.styleFrom(primary: Colors.white),
-                       // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                        onPressed:(){ 
-                          Navigator.pushNamed(context, '/home');
-                        })
-                        //child: Text(
-                        //  'Sign Up'.toUpperCase(),
-                         // style: TextStyle(
-                           //   color: Colors.white, fontWeight: FontWeight.bold),
-                       // ),
-                      ),
+                          child: TextButton(
+                              child: Text('Signup'),
+                              style:
+                                  TextButton.styleFrom(primary: Colors.white),
+                              // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/home');
+                              })
+                          //child: Text(
+                          //  'Sign Up'.toUpperCase(),
+                          // style: TextStyle(
+                          //   color: Colors.white, fontWeight: FontWeight.bold),
+                          // ),
+                          ),
                     ),
                   ),
                 ],
@@ -193,8 +195,10 @@ class _SignupPageState extends State<SignupPage> {
               ),
               onTap: () {
                 Navigator.pop(context);
-               Navigator.pushNamed(context,'/login',
-               );
+                Navigator.pushNamed(
+                  context,
+                  '/login',
+                );
               },
             ),
           ],

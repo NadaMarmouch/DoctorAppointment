@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'Login.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({Key? key}) : super(key: key);
@@ -11,19 +10,20 @@ class FirstScreen extends StatelessWidget {
         title: const Text('Doctor Appointment App'),
       ),
       body: Center(
-        
-        child:ButtonBar(
-      children: [ ElevatedButton(
+          child: ButtonBar(children: [
+        ElevatedButton(
           child: const Text('Login'),
-           onPressed:(){  Navigator.pushNamed(context, '/login');
+          onPressed: () {
+            Navigator.pushNamed(context, '/login');
           },
-        ),ElevatedButton(
+        ),
+        ElevatedButton(
           child: const Text('Login'),
-           onPressed:(){  Navigator.pushNamed(context, '/login');
+          onPressed: () {
+            Navigator.pushNamed(context, '/login');
           },
-        ),]
-        )
-      ),
+        ),
+      ])),
     );
   }
 }
