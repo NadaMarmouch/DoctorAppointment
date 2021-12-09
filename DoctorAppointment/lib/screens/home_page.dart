@@ -11,10 +11,6 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return initScreen();
-  }
-
-  Widget initScreen() {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xFF00abff),
@@ -64,11 +60,18 @@ class HomePageState extends State<HomePage> {
       
     ),
       body: Container(
+       
         decoration: BoxDecoration(
             color: Colors.grey[100],
             borderRadius: BorderRadius.only(
                 topRight: Radius.circular(30), topLeft: Radius.circular(30))),
-        child: Column(
+             
+             
+              child: ListView(
+                scrollDirection: Axis.vertical,
+                children: [
+
+         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -196,13 +199,69 @@ class HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+      
         
-          ],
-        ),
-      ),
-    );
+          doctor_name("assets/teeth.jpg","Dr. Nour El Den", "Dentisty", "4.7",),SizedBox(height: 5,),
+           doctor_name("assets/boness.jpg","Dr. Mohamed zaher", "Bone Specialist","4.8",),SizedBox(height: 5,),
+          doctor_name("assets/Neurology.PNG","Dr. Ahmed Zahran", "Neurology Specialist","4.4",),SizedBox(height: 5,),
+          doctor_name( "assets/cardiology.PNG","Dr. Mohamed Ramdon","cardiology disease", "4.1",),SizedBox(height: 5,)
+         ]
+      )  ]
+    )
+   )
+  );
+  
   }
-
+Widget doctor_name(String img, String Name,String categotry,String rate){
+  return Center(
+    child:   Container(
+       width: 350,
+        decoration: BoxDecoration(
+       
+         color: Color(0xFF00abff),
+          borderRadius: BorderRadius.circular(20)
+        ),
+        padding: EdgeInsets.symmetric(horizontal:30,
+        vertical: 18),
+        child: Row(
+          children: <Widget>[
+            Image.asset(img, height: 50,),
+       SizedBox(width: 15,),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(Name, style: TextStyle(
+                  color: Color(0xFF0077c6),
+                  fontSize: 19
+                ),),
+                SizedBox(height: 2,),
+                Text(categotry, style: TextStyle(
+                  fontSize: 15
+                ),)
+              ],
+            ),
+           
+         Container(
+              padding: EdgeInsets.symmetric(horizontal: 20,
+              vertical: 10),
+              margin: EdgeInsets.symmetric(horizontal: 30.0),
+              decoration: BoxDecoration(
+                color: Color(0xFF0077c6),
+                borderRadius: BorderRadius.circular(15)
+              ),
+              child: Text(rate, style: TextStyle(
+                
+                 color: Colors.white,
+                fontSize: 13,
+                fontWeight: FontWeight.w500
+              ),),
+            ) ],
+        ),
+   ) );
+        
+      
+      
+}
 //style color for the category of doctors
   Widget Categories(String img, String name, String drCount) {
     return GestureDetector(
@@ -254,5 +313,4 @@ class HomePageState extends State<HomePage> {
             ],
           ),
         ));
-  }
-}
+  }}

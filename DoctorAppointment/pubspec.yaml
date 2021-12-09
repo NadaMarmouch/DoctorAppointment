@@ -64,10 +64,13 @@ flutter:
     - assets/bone.png
     - assets/heart.png
     - assets/brain.png
+    - assets/teeth.jpg
     - assets/Audilogy.jpg
     - assets/Dermatology.jpg
     - assets/cardiology.PNG
+    - assets/accounts.png
     - assets/Neurology.PNG
+    - assets/boness.jpg
      
 
   # An image asset can refer to one or more resolution-specific "variants", see
