@@ -242,12 +242,12 @@ Widget doctor_name(String img, String Name,String categotry,String rate){
             ),
            
          Container(
-              padding: EdgeInsets.symmetric(horizontal: 20,
-              vertical: 10),
-              margin: EdgeInsets.symmetric(horizontal: 30.0),
+              padding: EdgeInsets.symmetric(horizontal: 15,
+              vertical: 5),
+              margin: EdgeInsets.symmetric(horizontal: 25.0),
               decoration: BoxDecoration(
                 color: Color(0xFF0077c6),
-                borderRadius: BorderRadius.circular(15)
+                borderRadius: BorderRadius.circular(10)
               ),
               child: Text(rate, style: TextStyle(
                 
