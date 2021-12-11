@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:doctor_appointment/theme/theme.dart';
 
 class SignupPage extends StatefulWidget {
   @override
@@ -9,14 +10,38 @@ class SignupPage extends StatefulWidget {
 class _SignupPageState extends State<SignupPage> {
   @override
   void initState() {
-    SystemChrome.setEnabledSystemUIOverlays([]);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+        body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/sign.jpg"),
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          Positioned.fill(
+            child: Opacity(
+              opacity: .6,
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [LightColor.purpleExtraLight, LightColor.purple],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      tileMode: TileMode.mirror,
+                      stops: [.5, 6]),
+                ),
+              ),
+            ),
+          ),
+       Container(
         child: ListView(
           children: <Widget>[
             Container(
@@ -26,7 +51,7 @@ class _SignupPageState extends State<SignupPage> {
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [Color(0xff6bceff), Color(0xff6bceff)],
+                    colors: [Colors.white, Colors.white],
                   ),
                   borderRadius:
                       BorderRadius.only(bottomLeft: Radius.circular(90))),
@@ -39,7 +64,7 @@ class _SignupPageState extends State<SignupPage> {
                     child: Icon(
                       Icons.person,
                       size: 90,
-                      color: Colors.white,
+                      color: Colors.blue,
                     ),
                   ),
                   Spacer(),
@@ -59,7 +84,7 @@ class _SignupPageState extends State<SignupPage> {
             Container(
               height: MediaQuery.of(context).size.height / 2,
               width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.only(top: 62),
+              padding: EdgeInsets.only(top: 55),
               child: Column(
                 children: <Widget>[
                   Container(
@@ -149,11 +174,11 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, '/');
+                      Navigator.pushNamed(context, '/signup');
                     },
                     child: Container(
                       height: 45,
-                      width: MediaQuery.of(context).size.width / 1.2,
+                      width: MediaQuery.of(context).size.width / 1.0,
                       decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
@@ -202,8 +227,7 @@ class _SignupPageState extends State<SignupPage> {
               },
             ),
           ],
-        ),
-      ),
-    );
+        )
+    )]));
   }
 }

@@ -71,7 +71,15 @@ flutter:
     - assets/accounts.png
     - assets/Neurology.PNG
     - assets/boness.jpg
-     
+    - assets/heartbeat.png
+    - assets/doctorwallpaper.jpg
+    - assets/dr.jpg
+    - assets/doctor.jpg
+    - assets/doc.PNG
+    - assets/doctors-.jpg
+    - assets/sign.jpg
+    
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

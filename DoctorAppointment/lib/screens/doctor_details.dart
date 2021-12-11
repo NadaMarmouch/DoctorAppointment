@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-
+import 'package:doctor_appointment/widget/toprated.dart';
+import 'package:doctor_appointment/widget/doctor_name.dart';
 
 
 class DoctorDetailPage extends StatefulWidget {
@@ -59,10 +59,10 @@ class _DoctorDetailState extends State<DoctorDetailPage> {
                         maxLines: 1,
                         autofocus: false,
                         style:
-                            TextStyle(color: Color(0xFF00abff), fontSize: 20),
+                            TextStyle(color: Color(0xFF00abff), fontSize: 15),
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Search..',
+                          hintText: 'Search for doctor..',
                         ),
                         cursorColor: Color(0xFF00abff),
                       ),
@@ -87,8 +87,17 @@ class _DoctorDetailState extends State<DoctorDetailPage> {
                 ],
               ),
             ),
+            SizedBox(height: 20,
 
-          ])
-       ])) );
-      }
-      }
+  
+            ),
+  doctor_name("assets/dr.jpg", "Dr.Yehia Ebeid", "Density", "250L.E","Heliopolis: Ankara st. infront of cairo complex mall sherton",450),
+  doctor_name("assets/doctor.jpg", "DR. Alyaa Abd Elhameed", "density", "200L.E","Heliopolis: 57 Hassan Aflaton stfrom ALNozzha st  ard el golf",450),
+  doctor_name("assets/teeth.jpg","Dr. Nour El Den", "Dentisty", "200"," Al Manteqah as Sadesah, Nasr City, Cairo Governorate",450),
+  doctor_name("assets/teeth.jpg","Dr. Nour El Den", "Dentisty", "200"," Al Manteqah as Sadesah, Nasr City, Cairo Governorate",450),
+   doctor_name("assets/doc.PNG","Dr. Ahmed Mohsin", "Dentisty", "300"," HCC medical mall clinic 208 (behind air force hospital) , fifth settlement",450)
+          ],
+      )])  ),
+      
+    );
+  }}

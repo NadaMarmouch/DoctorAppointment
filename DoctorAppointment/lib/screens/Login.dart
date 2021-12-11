@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:doctor_appointment/theme/theme.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -17,7 +18,32 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+        body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/sign.jpg"),
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          Positioned.fill(
+            child: Opacity(
+              opacity: .6,
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [LightColor.purpleExtraLight, LightColor.purple],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      tileMode: TileMode.mirror,
+                      stops: [.5, 6]),
+                ),
+              ),
+            ),
+          ),
+       Container(
         child: ListView(
           children: <Widget>[
             Container(
@@ -27,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [Color(0xff6bceff), Color(0xff6bceff)],
+                    colors: [Colors.white, Colors.white],
                   ),
                   borderRadius:
                       BorderRadius.only(bottomLeft: Radius.circular(90))),
@@ -40,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: Icon(
                       Icons.person,
                       size: 90,
-                      color: Colors.white,
+                      color: Colors.blue,
                     ),
                   ),
                   Spacer(),
@@ -122,7 +148,7 @@ class _LoginPageState extends State<LoginPage> {
                   Spacer(),
                   InkWell(
                       onTap: (){
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/signup');
                       },
                       child: Container(
                       height: 45,
@@ -162,12 +188,12 @@ class _LoginPageState extends State<LoginPage> {
               ),
               onTap: () {
                 Navigator.pop(context);
-               Navigator.pushNamed(context,'/' );
+               Navigator.pushNamed(context,'/signup' );
               },
             ),
           ],
         ),
       ),
-    );
+        ]));
   }
 }
