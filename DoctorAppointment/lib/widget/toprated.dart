@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 
-Widget toprated(String img, String Name,String categotry,String rate, double width){
+class toprated extends  StatelessWidget {
+  String img;
+   String Name;
+   String categotry;
+   String rate;
+   double width;
+  toprated(this.img,this.Name, this.categotry,this.rate,this.width);
+
+  @override
+  Widget build(BuildContext context) {
   return Center(
     child:   Container(
        width: width,
@@ -46,4 +55,5 @@ Widget toprated(String img, String Name,String categotry,String rate, double wid
         ),
    ) ); 
       
+}
 }

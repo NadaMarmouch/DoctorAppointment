@@ -181,10 +181,10 @@ class HomePageState extends State<HomePage> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  Categories("assets/tooth.png", "Dentisty", "10 Doctors"),
-                  Categories("assets/brain.png", "Neurology", "5 Doctors"),
-                  Categories("assets/bone.png", "Orthopedics", "5 Doctors"),
-                  Categories("assets/heart.png", "cardiology and vascular disease", "4 Doctors"),
+                  category("assets/tooth.png", "Dentisty", "10 Doctors"),
+                  category("assets/brain.png", "Neurology", "5 Doctors"),
+                  category("assets/bone.png", "Orthopedics", "5 Doctors"),
+                  category("assets/heart.png", "cardiology and vascular disease", "4 Doctors"),
                   
                 ],
               ),

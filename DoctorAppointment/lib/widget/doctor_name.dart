@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 
-Widget doctor_name(String img, String Name,String categotry,String fees, String location, double width){
-  return Center(
+class doctor_name extends StatelessWidget{
+   String img;
+   String Name;
+   String categotry;
+   String fees;
+   String location;
+   double width;
+  doctor_name(this.img, this.Name,this.categotry, this.fees,this.location, this.width);
+
+ @override
+  Widget build(BuildContext context) {
+    return Center(
     child:   Container(
        width: width,
         decoration: BoxDecoration(
@@ -13,7 +23,7 @@ Widget doctor_name(String img, String Name,String categotry,String fees, String 
         vertical: 18),
         child: Row(
           children: <Widget>[
-            Image.asset(img, height: 40,),
+            Image.asset(img, height: 35,),
        SizedBox(width: 10,),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,6 +34,10 @@ Widget doctor_name(String img, String Name,String categotry,String fees, String 
                 ),),
                 SizedBox(height: 2,),
                 Text(categotry, style: TextStyle(
+                  fontSize: 14
+                ),),
+                 SizedBox(height: 2,),
+                Text(location, style: TextStyle(
                   fontSize: 14
                 ),)
               ],
@@ -42,8 +56,13 @@ Widget doctor_name(String img, String Name,String categotry,String fees, String 
                 fontSize: 13,
                 fontWeight: FontWeight.w500
           ),   ),),
+          
              ],
         ),
    ) ); 
       
 }
+
+  }
+  
+  

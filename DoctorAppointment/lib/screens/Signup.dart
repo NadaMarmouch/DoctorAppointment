@@ -91,7 +91,7 @@ class _SignupPageState extends State<SignupPage> {
                     width: MediaQuery.of(context).size.width / 1.2,
                     height: 45,
                     padding:
-                        EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
+                        EdgeInsets.only(top: 4, left: 14, right: 15, bottom: 4),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(50)),
                         color: Colors.white,

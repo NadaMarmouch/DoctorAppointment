@@ -95,7 +95,12 @@ class _DoctorDetailState extends State<DoctorDetailPage> {
   doctor_name("assets/doctor.jpg", "DR. Alyaa Abd Elhameed", "density", "200L.E","Heliopolis: 57 Hassan Aflaton stfrom ALNozzha st  ard el golf",450),
   doctor_name("assets/teeth.jpg","Dr. Nour El Den", "Dentisty", "200"," Al Manteqah as Sadesah, Nasr City, Cairo Governorate",450),
   doctor_name("assets/teeth.jpg","Dr. Nour El Den", "Dentisty", "200"," Al Manteqah as Sadesah, Nasr City, Cairo Governorate",450),
-   doctor_name("assets/doc.PNG","Dr. Ahmed Mohsin", "Dentisty", "300"," HCC medical mall clinic 208 (behind air force hospital) , fifth settlement",450)
+  doctor_name("assets/accounts.png","Dr. Ahmed Khaed", "Dentisty", "250"," Nasr City, Cairo Governorate",450),
+  doctor_name("assets/accounts.png","Dr. Norhan el berry", "Dentisty", "200"," Masr el gdeda, Cairo Governorate",450),
+  doctor_name("assets/doc.PNG","Dr. Ahmed Mohsin", "Dentisty", "300"," HCC medical mall clinic 208 (behind air force hospital) , fifth settlement",450),
+  doctor_name("assets/accounts.png","Dr. Daniel Hany", "Dentisty", "200","Heliopolis: obour builidings",450),
+  doctor_name("assets/accounts.png","Dr. seif eldin", "Dentisty", "250"," New cairo:north 90th",450),
+  doctor_name("assets/accounts.png","Dr. mohamed hamedy", "Dentisty", "250"," New cairo:north 90th",450)
           ],
       )])  ),
       
