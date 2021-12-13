@@ -56,7 +56,7 @@ class _EditProfileUIState extends State<EditProfileUI> {
               ListTile(
                 title: const Text('Logout'),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.pushNamed(context,'/');
                 },
               ),
             ],

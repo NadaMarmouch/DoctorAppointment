@@ -11,6 +11,7 @@ class DoctorDetailPage extends StatefulWidget {
 class _DoctorDetailState extends State<DoctorDetailPage> {
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
        title: Text('Doctor List'),

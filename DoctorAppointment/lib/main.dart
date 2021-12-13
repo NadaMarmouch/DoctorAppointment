@@ -13,13 +13,13 @@ void main() {
   runApp(MaterialApp(
     title: 'Doctor Appointment',
     routes: {
-      // '/': (context) => firstscreen(),
-      // '/signup': (context) => SignupPage(),
-      // '/login': (context) => LoginPage(),
-      // '/home': (context) => HomePage(),
-      // '/details': (context) => DoctorDetailPage(),
-      // '/editprofile': (context) => EditProfileUI(),
-      '/': (context) => DoctorProfilePage(),
+       '/': (context) => firstscreen(),
+       '/signup': (context) => SignupPage(),
+       '/login': (context) => LoginPage(),
+       '/home': (context) => HomePage(),
+       '/details': (context) => DoctorDetailPage(),
+       '/editprofile': (context) => EditProfileUI(),
+       '/doctorreserve': (context) => DoctorProfilePage(),
     },
   ));
 }

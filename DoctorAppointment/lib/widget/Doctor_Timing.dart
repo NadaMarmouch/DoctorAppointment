@@ -4,7 +4,11 @@ class doctorTimingsData extends StatelessWidget {
   String time;
   bool isSelected;
   doctorTimingsData(this.time, this.isSelected);
+
+
   Widget build(BuildContext context) {
+
+    
     return isSelected
         ? Container(
             margin: EdgeInsets.only(left: 20, top: 10),

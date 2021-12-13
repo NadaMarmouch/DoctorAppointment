@@ -37,6 +37,13 @@ class HomePageState extends State<HomePage> {
                 Navigator.pushNamed(context, '/editprofile');
               },
             ),
+            
+            ListTile(
+              title: const Text('My Appointment'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
             ListTile(
               title: const Text('Rate'),
               onTap: () {
@@ -46,7 +53,7 @@ class HomePageState extends State<HomePage> {
             ListTile(
               title: const Text('Logout'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context,'/');
               },
             ),
           ],
