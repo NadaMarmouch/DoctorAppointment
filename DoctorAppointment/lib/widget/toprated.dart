@@ -10,7 +10,10 @@ class toprated extends  StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  return Center(
+     return GestureDetector(
+        onTap: () {
+         Navigator.pushNamed(context, "/doctorreserve");
+        },
     child:   Container(
        width: width,
         decoration: BoxDecoration(

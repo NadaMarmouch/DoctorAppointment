@@ -47,7 +47,7 @@ class HomePageState extends State<HomePage> {
             ListTile(
               title: const Text('Rate'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context,'/rate');
               },
             ),
             ListTile(
@@ -59,12 +59,23 @@ class HomePageState extends State<HomePage> {
           ],
         ),
       ),
+      
       appBar: AppBar(
         title: Text('Doctor Appointment'),
          elevation: 0.0,
          backgroundColor: Color(0xFF00abff),
          centerTitle: true,
         
+        actions: [
+          GestureDetector(
+            child: Container(
+              margin: EdgeInsets.only(right: 10),
+              child: Icon(
+                Icons.notifications_rounded,
+                color: Colors.white,
+              ),
+            ),
+          ),]
       
     ),
       body: Container(

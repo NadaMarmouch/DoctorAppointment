@@ -50,7 +50,7 @@ class _EditProfileUIState extends State<EditProfileUI> {
               ListTile(
                 title: const Text('Rate'),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.pushNamed(context,'/rate');
                 },
               ),
               ListTile(

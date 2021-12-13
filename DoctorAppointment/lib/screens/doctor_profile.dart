@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:doctor_appointment/widget/Doctor_dates.dart';
-import 'package:doctor_appointment/widget/Doctor_Timing.dart';
+import 'package:doctor_appointment/widget/doctor_dates.dart';
+import 'package:doctor_appointment/widget/doctor_timing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 

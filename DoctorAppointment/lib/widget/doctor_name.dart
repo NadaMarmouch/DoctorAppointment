@@ -41,6 +41,7 @@ class doctor_name extends StatelessWidget{
                   fontSize: 14
                 ),),
                  SizedBox(height: 2,),
+                 
                 Text(location, style: TextStyle(
                   fontSize: 13
                 ),)
