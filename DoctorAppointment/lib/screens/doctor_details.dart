@@ -36,7 +36,7 @@ class _DoctorDetailState extends State<DoctorDetailPage> {
             Container(
               margin: EdgeInsets.only(top: 25, left: 20, right: 20),
              // width: size.width,
-              height: 60,
+              height: 50,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(5),
@@ -100,7 +100,30 @@ class _DoctorDetailState extends State<DoctorDetailPage> {
   doctor_name("assets/doc.PNG","Dr. Ahmed Mohsin", "Dentisty", "300"," HCC medical mall clinic 208 (behind air force hospital) , fifth settlement",450),
   doctor_name("assets/accounts.png","Dr. Daniel Hany", "Dentisty", "200","Heliopolis: obour builidings",450),
   doctor_name("assets/accounts.png","Dr. seif eldin", "Dentisty", "250"," New cairo:north 90th",450),
-  doctor_name("assets/accounts.png","Dr. mohamed hamedy", "Dentisty", "250"," New cairo:north 90th",450)
+  doctor_name("assets/accounts.png","Dr. mohamed hamedy", "Dentisty", "250"," New cairo:north 90th",450),
+
+//Neurology
+   doctor_name("assets/Neurology.PNG","Dr. Ahmed Zahran", "Neurology","600"," Heliopolis: Maqrezy",450),
+   doctor_name("assets/doc.PNG","Dr. Mohamed Tawfik", "Neurology", "800"," Heliopolis: El merghani",450),
+   doctor_name("assets/accounts.png","Dr. Ghada Farag", "Neurology", "400","Heliopolis: El merghani",450),
+   doctor_name("assets/accounts.png","Dr. Alia Hassan", "Neurology", "400"," Heliopolis: El Nasr",450),
+   doctor_name("assets/accounts.png","Dr. mohamed Ali", "Neurology", "300"," Heliopolis: Maqrezy",450),
+
+
+   //Orthopedics
+   doctor_name("assets/Neurology.PNG","Dr. Baraa Hassan ", "Orthopedics","250"," Heliopolis: nozha street",450),
+   doctor_name("assets/doc.PNG","Dr. Hazem Mhmoud", "Orthopedics", "300"," Heliopolis:Lbn elwardy",450),
+   doctor_name("assets/accounts.png","Dr. Hazem Shokair", "Orthopedics", "300","Heliopolis: hegazi",450),
+   doctor_name("assets/accounts.png","Dr. Andrew Aghabious", "Orthopedics", "200"," Heliopolis: Abdelhay fathy street",450),
+   doctor_name("assets/accounts.png","Dr. Ahmed Galal Mansour", "Orthopedics", "400"," Heliopolis: Nozha",450),
+       
+
+       //cardiology and vascular disease
+   doctor_name("assets/cardiology.PNG","Dr. Mohamed Ramdon","cardiology disease","400"," Heliopolis: nozha street",450),
+   doctor_name("assets/doc.PNG","Dr. sherif hussein", "cardiology disease", "400"," Heliopolis:El fayoum",450),
+   doctor_name("assets/accounts.png","Dr. waleed abdelfatah", "cardiology disease", "200","Heliopolis: el sabaq street",450),
+   doctor_name("assets/accounts.png","Dr. Ayman osama", "cardiology disease", "250"," Heliopolis: Gesr El Suez",450),
+       
           ],
       )])  ),
       

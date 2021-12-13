@@ -10,8 +10,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-    final _formKey = GlobalKey<FormState>();
-
+  
   @override
   void initState() {
     super.initState();
@@ -102,9 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                         boxShadow: [
                           BoxShadow(color: Colors.black12, blurRadius: 5)
                         ]),
-                        
                     child: TextField(
-                      
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         icon: Icon(
@@ -112,7 +109,6 @@ class _LoginPageState extends State<LoginPage> {
                           color: Color(0xff6bceff),
                         ),
                         hintText: 'Username',
-                        
                       ),
                     ),
                   ),
@@ -146,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                       padding: const EdgeInsets.only(top: 16, right: 32),
                       child: Text(
                         'Forgot Password ?',
-                        style: TextStyle(color: Colors.grey),
+                        style: TextStyle(color: Colors.black),
                       ),
                     ),
                   ),

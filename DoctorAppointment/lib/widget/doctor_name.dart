@@ -19,12 +19,12 @@ class doctor_name extends StatelessWidget{
          color: Color(0xFF00abff),
           borderRadius: BorderRadius.circular(20)
         ),
-        padding: EdgeInsets.symmetric(horizontal:30,
+        padding: EdgeInsets.symmetric(horizontal:25,
         vertical: 18),
         child: Row(
           children: <Widget>[
-            Image.asset(img, height: 35,),
-       SizedBox(width: 10,),
+            Image.asset(img, height: 30,),
+       SizedBox(width: 7,),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -38,7 +38,7 @@ class doctor_name extends StatelessWidget{
                 ),),
                  SizedBox(height: 2,),
                 Text(location, style: TextStyle(
-                  fontSize: 14
+                  fontSize: 13
                 ),)
               ],
             ),
