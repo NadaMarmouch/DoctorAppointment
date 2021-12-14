@@ -13,7 +13,7 @@ class doctorTimingsData extends StatelessWidget {
         ? Container(
             margin: EdgeInsets.only(left: 20, top: 10),
             decoration: BoxDecoration(
-              color: Color(0xff107163),
+              color: Color(0xFF00abff),
               borderRadius: BorderRadius.circular(5),
             ),
             child: Row(

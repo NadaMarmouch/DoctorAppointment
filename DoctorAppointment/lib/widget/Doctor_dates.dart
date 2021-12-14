@@ -11,7 +11,7 @@ class demoDates extends StatelessWidget {
             width: 70,
             margin: EdgeInsets.only(right: 15),
             decoration: BoxDecoration(
-              color: Color(0xff107163),
+              color: Color(0xFF00abff),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Column(

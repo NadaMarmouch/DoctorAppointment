@@ -21,7 +21,7 @@ void main() {
        '/details': (context) => DoctorDetailPage(),
        '/editprofile': (context) => EditProfileUI(),
       '/doctorreserve': (context) => DoctorProfilePage(),
-      '/rate': (context) => rateing(),
+    //  '/rate': (context) => rateing(),
     },
   ));
 }
