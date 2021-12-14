@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widgets/rating.dart';
+import 'package:doctor_appointment/widget/rating.dart';
 
 class RatingsPage extends StatefulWidget {
   @override
@@ -7,7 +7,7 @@ class RatingsPage extends StatefulWidget {
 }
 
 class _RatingsPage extends State<RatingsPage> {
-  late int _rating;
+ int? _rating;
 
   @override
   Widget build(BuildContext context) {

@@ -8,6 +8,7 @@ import 'screens/editprofile.dart';
 import 'screens/profile.dart';
 import 'screens/first_screen.dart';
 import 'screens/doctor_profile.dart';
+import 'package:doctor_appointment/screens/ratingPage.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -20,7 +21,7 @@ void main() {
        '/details': (context) => DoctorDetailPage(),
        '/editprofile': (context) => EditProfileUI(),
       '/doctorreserve': (context) => DoctorProfilePage(),
-    //  '/rate': (context) => rateing(),
+      '/rate': (context) => RatingsPage(),
     },
   ));
 }
