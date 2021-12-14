@@ -12,7 +12,7 @@ class _RatingsPage extends State<RatingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Flutter Ratings Widget Demo")),
+        appBar: AppBar(title: Text("Rating")),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
