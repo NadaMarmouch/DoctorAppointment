@@ -20,10 +20,14 @@ void main() {
       '/editprofile': (context) => EditProfileUI(),
       '/doctorreserve': (context) => DoctorProfilePage(),
 <<<<<<< HEAD
+<<<<<<< HEAD
       //  '/rate': (context) => rateing(),
 =======
       '/rate': (context) => RatingsPage(),
 >>>>>>> 19f3286738fa542e8d8803933ab34a9d9e558ecd
+=======
+    //  '/rate': (context) => RatingsPage(),
+>>>>>>> b0a461d6fd39074cb3cd1ccc9d837c3812bab07e
     },
   ));
 }
