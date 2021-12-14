@@ -34,7 +34,7 @@ class doctorTimingsData extends StatelessWidget {
                     '08:30 AM',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 17,
+                      fontSize: 16,
                       fontFamily: 'Roboto',
                     ),
                   ),
@@ -66,7 +66,7 @@ class doctorTimingsData extends StatelessWidget {
                     '08:30 AM',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 17,
+                      fontSize: 14,
                       fontFamily: 'Roboto',
                     ),
                   ),
