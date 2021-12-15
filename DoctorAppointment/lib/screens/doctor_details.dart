@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:doctor_appointment/widget/toprated.dart';
 import 'package:doctor_appointment/widget/doctor_name.dart';
-
+import 'package:provider/provider.dart';
+import 'doctor_profile.dart';
 
 class DoctorDetailPage extends StatefulWidget {
   @override
@@ -104,17 +105,17 @@ class _DoctorDetailState extends State<DoctorDetailPage> {
   
             ),
             
-  doctor_name("assets/dr.jpg", "Dr.Yehia Ebeid", "Density", "250L.E","Heliopolis: Ankara st. infront of cairo complex mall sherton",450),
+  doctor_name("assets/dr.jpg", "Dr.Yehia Ebeid", "Density", "250L.E","Heliopolis:  sherton",450),
   SizedBox(height: 10,),
-  doctor_name("assets/doctor.jpg", "DR. Alyaa Abd Elhameed", "density", "200L.E","Heliopolis: 57 Hassan Aflaton stfrom ALNozzha st  ard el golf",450),
+  doctor_name("assets/doctor.jpg", "DR. Alyaa Abd Elhameed", "density", "200L.E","Heliopolis:  ard el golf",450),
   SizedBox(height: 10,),
-  doctor_name("assets/teeth.jpg","Dr. Nour El Den", "Dentisty", "200L.E"," Al Manteqah as Sadesah, Nasr City, Cairo Governorate",450),
+  doctor_name("assets/teeth.jpg","Dr. Nour El Den", "Dentisty", "200L.E","  Nasr City, Cairo Governorate",450),
   SizedBox(height: 10,),
   doctor_name("assets/accounts.png","Dr. Ahmed Khaed", "Dentisty", "250L.E"," Nasr City, Cairo Governorate",450),
   SizedBox(height: 10,),
-  doctor_name("assets/accounts.png","Dr. Norhan el berry", "Dentisty", "200L.E"," Masr el gdeda, Cairo Governorate",450),
+  doctor_name("assets/accounts.png","Dr. Norhan el berry", "Dentisty", "200L.E"," Masr el gdeda, ",450),
   SizedBox(height: 10,),
-  doctor_name("assets/doc.PNG","Dr. Ahmed Mohsin", "Dentisty", "300L.E"," HCC medical mall clinic 208 (behind air force hospital) , fifth settlement",450),
+  doctor_name("assets/doc.PNG","Dr. Ahmed Mohsin", "Dentisty", "300L.E"," clinic 208 , fifth settlement",450),
   SizedBox(height: 10,),
   doctor_name("assets/accounts.png","Dr. Daniel Hany", "Dentisty", "200L.E","Heliopolis: obour builidings",450),
   SizedBox(height: 10,),
@@ -143,7 +144,7 @@ class _DoctorDetailState extends State<DoctorDetailPage> {
    SizedBox(height: 10,),
    doctor_name("assets/accounts.png","Dr. Hazem Shokair", "Orthopedics", "300L.E","Heliopolis: hegazi",450),
    SizedBox(height: 10,),
-   doctor_name("assets/accounts.png","Dr. Andrew Aghabious", "Orthopedics", "200L.E"," Heliopolis: Abdelhay fathy street",450),
+   doctor_name("assets/accounts.png","Dr. Andrew Aghabious", "Orthopedics", "200L.E"," Heliopolis: Abdelhay fathy st",450),
    SizedBox(height: 10,),
    doctor_name("assets/accounts.png","Dr. Ahmed Galal Mansour", "Orthopedics", "400L.E"," Heliopolis: Nozha",450),
        SizedBox(height: 10,),

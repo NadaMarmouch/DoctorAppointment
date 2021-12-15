@@ -10,6 +10,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _formKey = GlobalKey<FormState>();
   
   @override
   void initState() {
@@ -18,7 +19,10 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Form
+    (
+      key: _formKey,
+      child:Scaffold(
         body: Stack(
         children: <Widget>[
           Container(
@@ -101,7 +105,13 @@ class _LoginPageState extends State<LoginPage> {
                         boxShadow: [
                           BoxShadow(color: Colors.black12, blurRadius: 5)
                         ]),
-                    child: TextField(
+                    child: TextFormField(
+                      validator: (value){
+                        if(value!.isEmpty){
+                          return 'Please enter your username';
+                        }
+                        return null;
+                      },
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         icon: Icon(
@@ -124,7 +134,13 @@ class _LoginPageState extends State<LoginPage> {
                         boxShadow: [
                           BoxShadow(color: Colors.black12, blurRadius: 5)
                         ]),
-                    child: TextField(
+                    child: TextFormField(
+                      validator: (value){
+                        if(value!.length>8){
+                          return 'Please enter Your Password';
+                        }
+                        return null;
+                      },
                       obscureText: true,
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -147,7 +163,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   Spacer(),
-                  InkWell(
+                  GestureDetector(
                       onTap: (){
                         Navigator.pushNamed(context, '/signup');
                       },
@@ -169,8 +185,11 @@ class _LoginPageState extends State<LoginPage> {
                                   TextButton.styleFrom(primary: Colors.white),
                               // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                               onPressed: () {
+                                 if(_formKey.currentState!.validate()){
+                                  ScaffoldMessenger.of(context) .showSnackBar(
+                                  SnackBar(content: Text('Processing Data')));
                                 Navigator.pushNamed(context, '/home');
-                              })),
+                               } })),
                     ),
                   ),
                 ],
@@ -179,7 +198,7 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 50,
             ),
-            InkWell(
+            GestureDetector(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -195,6 +214,6 @@ class _LoginPageState extends State<LoginPage> {
           ],
         ),
       ),
-        ]));
+        ])));
   }
 }

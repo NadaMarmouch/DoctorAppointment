@@ -17,6 +17,15 @@ class _RatingsPage extends State<RatingsPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+               const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Enter a Feedback or any comments',
+            ),
+          ),
+        ),
               Rating((rating) {
                 setState(() {
                   _rating = rating;

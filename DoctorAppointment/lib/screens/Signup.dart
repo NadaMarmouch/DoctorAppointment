@@ -8,6 +8,7 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+final _formKey = GlobalKey<FormState>();
   @override
   void initState() {
     super.initState();
@@ -15,7 +16,10 @@ class _SignupPageState extends State<SignupPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Form
+    (
+      key: _formKey,
+      child:Scaffold(
         body: Stack(
         children: <Widget>[
           Container(
@@ -98,7 +102,13 @@ class _SignupPageState extends State<SignupPage> {
                         boxShadow: [
                           BoxShadow(color: Colors.black12, blurRadius: 5)
                         ]),
-                    child: TextField(
+                    child: TextFormField(
+                      validator: (value){
+                        if(value!.isEmpty){
+                          return 'Please enter your username';
+                        }
+                        return null;
+                      },
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Username',
@@ -119,7 +129,13 @@ class _SignupPageState extends State<SignupPage> {
                         boxShadow: [
                           BoxShadow(color: Colors.black12, blurRadius: 5)
                         ]),
-                    child: TextField(
+                    child: TextFormField(
+                      validator: (value){
+                        if(value!.isEmpty){
+                          return 'Please enter your email';
+                        }
+                        return null;
+                      },
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Email',
@@ -140,7 +156,13 @@ class _SignupPageState extends State<SignupPage> {
                         boxShadow: [
                           BoxShadow(color: Colors.black12, blurRadius: 5)
                         ]),
-                    child: TextField(
+                    child: TextFormField(
+                      validator: (value){
+                        if(value!.length>11){
+                          return 'Please enter your phonenumber';
+                        }
+                        return null;
+                      },
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Phone number',
@@ -161,7 +183,13 @@ class _SignupPageState extends State<SignupPage> {
                         boxShadow: [
                           BoxShadow(color: Colors.black12, blurRadius: 5)
                         ]),
-                    child: TextField(
+                    child: TextFormField(
+                      validator: (value){
+                        if(value!.length>8){
+                          return 'Please enter your password';
+                        }
+                        return null;
+                      },
                       obscureText: true,
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -172,7 +200,7 @@ class _SignupPageState extends State<SignupPage> {
                   SizedBox(
                     height: 15,
                   ),
-                  InkWell(
+                  GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, '/signup');
                     },
@@ -194,7 +222,14 @@ class _SignupPageState extends State<SignupPage> {
                                   TextButton.styleFrom(primary: Colors.white),
                               // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                               onPressed: () {
+                                if(_formKey.currentState!.validate()){
+                                  ScaffoldMessenger.of(context) .showSnackBar(
+                                  SnackBar(content: Text('Processing Data')));
                                 Navigator.pushNamed(context, '/home');
+                                }
+
+
+                                
                               })
                           //child: Text(
                           //  'Sign Up'.toUpperCase(),
@@ -207,7 +242,7 @@ class _SignupPageState extends State<SignupPage> {
                 ],
               ),
             ),
-            InkWell(
+            GestureDetector(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -228,6 +263,6 @@ class _SignupPageState extends State<SignupPage> {
             ),
           ],
         )
-    )]));
+    )])));
   }
 }
