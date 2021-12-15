@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:doctor_appointment/widget/toprated.dart';
 import 'package:doctor_appointment/widget/doctor_name.dart';
-
+import 'package:provider/provider.dart';
+import 'doctor_profile.dart';
 
 class DoctorDetailPage extends StatefulWidget {
   @override
@@ -11,13 +12,25 @@ class DoctorDetailPage extends StatefulWidget {
 class _DoctorDetailState extends State<DoctorDetailPage> {
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
        title: Text('Doctor List'),
          elevation: 0.0,
          backgroundColor: Color(0xFF00abff),
          centerTitle: true,
+          actions: [
+          GestureDetector(
+            child: Container(
+              margin: EdgeInsets.only(right: 10),
+              child: Icon(
+                Icons.notifications_rounded,
+                color: Colors.white,
+              ),
+            ),
+          ),]
       ),
+      
       body: Container( 
         decoration: BoxDecoration(
             color: Colors.grey[100],
@@ -36,7 +49,7 @@ class _DoctorDetailState extends State<DoctorDetailPage> {
             Container(
               margin: EdgeInsets.only(top: 25, left: 20, right: 20),
              // width: size.width,
-              height: 60,
+              height: 50,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(5),
@@ -91,16 +104,60 @@ class _DoctorDetailState extends State<DoctorDetailPage> {
 
   
             ),
-  doctor_name("assets/dr.jpg", "Dr.Yehia Ebeid", "Density", "250L.E","Heliopolis: Ankara st. infront of cairo complex mall sherton",450),
-  doctor_name("assets/doctor.jpg", "DR. Alyaa Abd Elhameed", "density", "200L.E","Heliopolis: 57 Hassan Aflaton stfrom ALNozzha st  ard el golf",450),
-  doctor_name("assets/teeth.jpg","Dr. Nour El Den", "Dentisty", "200"," Al Manteqah as Sadesah, Nasr City, Cairo Governorate",450),
-  doctor_name("assets/teeth.jpg","Dr. Nour El Den", "Dentisty", "200"," Al Manteqah as Sadesah, Nasr City, Cairo Governorate",450),
-  doctor_name("assets/accounts.png","Dr. Ahmed Khaed", "Dentisty", "250"," Nasr City, Cairo Governorate",450),
-  doctor_name("assets/accounts.png","Dr. Norhan el berry", "Dentisty", "200"," Masr el gdeda, Cairo Governorate",450),
-  doctor_name("assets/doc.PNG","Dr. Ahmed Mohsin", "Dentisty", "300"," HCC medical mall clinic 208 (behind air force hospital) , fifth settlement",450),
-  doctor_name("assets/accounts.png","Dr. Daniel Hany", "Dentisty", "200","Heliopolis: obour builidings",450),
-  doctor_name("assets/accounts.png","Dr. seif eldin", "Dentisty", "250"," New cairo:north 90th",450),
-  doctor_name("assets/accounts.png","Dr. mohamed hamedy", "Dentisty", "250"," New cairo:north 90th",450)
+            
+  doctor_name("assets/dr.jpg", "Dr.Yehia Ebeid", "Density", "250L.E","Heliopolis:  sherton",450),
+  SizedBox(height: 10,),
+  doctor_name("assets/doctor.jpg", "DR. Alyaa Abd Elhameed", "density", "200L.E","Heliopolis:  ard el golf",450),
+  SizedBox(height: 10,),
+  doctor_name("assets/teeth.jpg","Dr. Nour El Den", "Dentisty", "200L.E","  Nasr City, Cairo Governorate",450),
+  SizedBox(height: 10,),
+  doctor_name("assets/accounts.png","Dr. Ahmed Khaed", "Dentisty", "250L.E"," Nasr City, Cairo Governorate",450),
+  SizedBox(height: 10,),
+  doctor_name("assets/accounts.png","Dr. Norhan el berry", "Dentisty", "200L.E"," Masr el gdeda, ",450),
+  SizedBox(height: 10,),
+  doctor_name("assets/doc.PNG","Dr. Ahmed Mohsin", "Dentisty", "300L.E"," clinic 208 , fifth settlement",450),
+  SizedBox(height: 10,),
+  doctor_name("assets/accounts.png","Dr. Daniel Hany", "Dentisty", "200L.E","Heliopolis: obour builidings",450),
+  SizedBox(height: 10,),
+  doctor_name("assets/accounts.png","Dr. seif eldin", "Dentisty", "250L.E"," New cairo:north 90th",450),
+  SizedBox(height: 10,),
+  doctor_name("assets/accounts.png","Dr. mohamed hamedy", "Dentisty", "250L.E"," New cairo:north 90th",450),
+  SizedBox(height: 10,),
+
+  
+//Neurology
+   doctor_name("assets/Neurology.PNG","Dr. Ahmed Zahran", "Neurology","600L.E"," Heliopolis: Maqrezy",450),
+   SizedBox(height: 10,),
+   doctor_name("assets/doc.PNG","Dr. Mohamed Tawfik", "Neurology", "800L.E"," Heliopolis: El merghani",450),
+   SizedBox(height: 10,),
+   doctor_name("assets/accounts.png","Dr. Ghada Farag", "Neurology", "400L.E","Heliopolis: El merghani",450),
+    SizedBox(height: 10,),
+   doctor_name("assets/accounts.png","Dr. Alia Hassan", "Neurology", "400L.E"," Heliopolis: El Nasr",450),
+   SizedBox(height: 10,), 
+   doctor_name("assets/accounts.png","Dr. mohamed Ali", "Neurology", "300L.E"," Heliopolis: Maqrezy",450),
+   SizedBox(height: 10,),
+
+   //Orthopedics
+   doctor_name("assets/Neurology.PNG","Dr. Baraa Hassan ", "Orthopedics","250L.E"," Heliopolis: nozha street",450),
+   SizedBox(height: 10,),
+   doctor_name("assets/doc.PNG","Dr. Hazem Mhmoud", "Orthopedics", "300L.E"," Heliopolis:Lbn elwardy",450),
+   SizedBox(height: 10,),
+   doctor_name("assets/accounts.png","Dr. Hazem Shokair", "Orthopedics", "300L.E","Heliopolis: hegazi",450),
+   SizedBox(height: 10,),
+   doctor_name("assets/accounts.png","Dr. Andrew Aghabious", "Orthopedics", "200L.E"," Heliopolis: Abdelhay fathy st",450),
+   SizedBox(height: 10,),
+   doctor_name("assets/accounts.png","Dr. Ahmed Galal Mansour", "Orthopedics", "400L.E"," Heliopolis: Nozha",450),
+       SizedBox(height: 10,),
+
+       //cardiology and vascular disease
+   doctor_name("assets/cardiology.PNG","Dr. Mohamed Ramdon","cardiology disease","400"," Heliopolis: nozha street",450),
+   SizedBox(height: 10,),
+   doctor_name("assets/doc.PNG","Dr. sherif hussein", "cardiology disease", "400"," Heliopolis:El fayoum",450),
+   SizedBox(height: 10,),
+   doctor_name("assets/accounts.png","Dr. waleed abdelfatah", "cardiology disease", "200","Heliopolis: el sabaq street",450),
+   SizedBox(height: 10,),
+   doctor_name("assets/accounts.png","Dr. Ayman osama", "cardiology disease", "250"," Heliopolis: Gesr El Suez",450),
+       
           ],
       )])  ),
       

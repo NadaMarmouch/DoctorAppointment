@@ -4,12 +4,16 @@ class doctorTimingsData extends StatelessWidget {
   String time;
   bool isSelected;
   doctorTimingsData(this.time, this.isSelected);
+
+
   Widget build(BuildContext context) {
+
+    
     return isSelected
         ? Container(
             margin: EdgeInsets.only(left: 20, top: 10),
             decoration: BoxDecoration(
-              color: Color(0xff107163),
+              color: Color(0xFF00abff),
               borderRadius: BorderRadius.circular(5),
             ),
             child: Row(
@@ -30,7 +34,7 @@ class doctorTimingsData extends StatelessWidget {
                     '08:30 AM',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 17,
+                      fontSize: 16,
                       fontFamily: 'Roboto',
                     ),
                   ),
@@ -62,7 +66,7 @@ class doctorTimingsData extends StatelessWidget {
                     '08:30 AM',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 17,
+                      fontSize: 14,
                       fontFamily: 'Roboto',
                     ),
                   ),

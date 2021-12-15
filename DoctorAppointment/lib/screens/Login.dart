@@ -10,8 +10,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-    final _formKey = GlobalKey<FormState>();
-
+  final _formKey = GlobalKey<FormState>();
+  
   @override
   void initState() {
     super.initState();
@@ -19,7 +19,10 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Form
+    (
+      key: _formKey,
+      child:Scaffold(
         body: Stack(
         children: <Widget>[
           Container(
@@ -102,9 +105,13 @@ class _LoginPageState extends State<LoginPage> {
                         boxShadow: [
                           BoxShadow(color: Colors.black12, blurRadius: 5)
                         ]),
-                        
-                    child: TextField(
-                      
+                    child: TextFormField(
+                      validator: (value){
+                        if(value!.isEmpty){
+                          return 'Please enter your username';
+                        }
+                        return null;
+                      },
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         icon: Icon(
@@ -112,7 +119,6 @@ class _LoginPageState extends State<LoginPage> {
                           color: Color(0xff6bceff),
                         ),
                         hintText: 'Username',
-                        
                       ),
                     ),
                   ),
@@ -128,7 +134,13 @@ class _LoginPageState extends State<LoginPage> {
                         boxShadow: [
                           BoxShadow(color: Colors.black12, blurRadius: 5)
                         ]),
-                    child: TextField(
+                    child: TextFormField(
+                      validator: (value){
+                        if(value!.isEmpty){
+                          return 'Please enter Your Password';
+                        }
+                        return null;
+                      },
                       obscureText: true,
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -146,7 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                       padding: const EdgeInsets.only(top: 16, right: 32),
                       child: Text(
                         'Forgot Password ?',
-                        style: TextStyle(color: Colors.grey),
+                        style: TextStyle(color: Colors.black),
                       ),
                     ),
                   ),
@@ -173,8 +185,11 @@ class _LoginPageState extends State<LoginPage> {
                                   TextButton.styleFrom(primary: Colors.white),
                               // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                               onPressed: () {
+                                 if(_formKey.currentState!.validate()){
+                                  ScaffoldMessenger.of(context) .showSnackBar(
+                                  SnackBar(content: Text('Processing Data')));
                                 Navigator.pushNamed(context, '/home');
-                              })),
+                               } })),
                     ),
                   ),
                 ],
@@ -199,6 +214,6 @@ class _LoginPageState extends State<LoginPage> {
           ],
         ),
       ),
-        ]));
+        ])));
   }
 }

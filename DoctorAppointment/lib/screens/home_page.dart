@@ -37,27 +37,45 @@ class HomePageState extends State<HomePage> {
                 Navigator.pushNamed(context, '/editprofile');
               },
             ),
+            
+            ListTile(
+              title: const Text('My Appointment'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
             ListTile(
               title: const Text('Rate'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context,'/rate');
               },
             ),
             ListTile(
               title: const Text('Logout'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context,'/');
               },
             ),
           ],
         ),
       ),
+      
       appBar: AppBar(
         title: Text('Doctor Appointment'),
          elevation: 0.0,
          backgroundColor: Color(0xFF00abff),
          centerTitle: true,
         
+        actions: [
+          GestureDetector(
+            child: Container(
+              margin: EdgeInsets.only(right: 10),
+              child: Icon(
+                Icons.notifications_rounded,
+                color: Colors.white,
+              ),
+            ),
+          ),]
       
     ),
       body: Container(

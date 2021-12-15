@@ -9,18 +9,20 @@ import 'screens/editprofile.dart';
 import 'screens/profile.dart';
 import 'screens/first_screen.dart';
 import 'screens/doctor_profile.dart';
+import 'package:doctor_appointment/screens/ratingPage.dart';
 
 void main() {
   runApp(MaterialApp(
     title: 'Doctor Appointment',
     routes: {
-      // '/': (context) => firstscreen(),
-      // '/signup': (context) => SignupPage(),
-      // '/login': (context) => LoginPage(),
-      // '/home': (context) => HomePage(),
-      // '/details': (context) => DoctorDetailPage(),
-      // '/editprofile': (context) => EditProfileUI(),
-      '/': (context) => DoctorProfilePage(),
+       '/': (context) => firstscreen(),
+       '/signup': (context) => SignupPage(),
+       '/login': (context) => LoginPage(),
+       '/home': (context) => HomePage(),
+       '/details': (context) => DoctorDetailPage(),
+       '/editprofile': (context) => EditProfileUI(),
+      '/doctorreserve': (context) => DoctorProfilePage(),
+      '/rate': (context) => RatingsPage(),
     },
   ));
 }

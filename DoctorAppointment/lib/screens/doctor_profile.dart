@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:doctor_appointment/widget/Doctor_dates.dart';
-import 'package:doctor_appointment/widget/Doctor_Timing.dart';
+import 'package:doctor_appointment/widget/doctor_dates.dart';
+import 'package:doctor_appointment/widget/doctor_timing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -24,7 +24,7 @@ class _DoctorProfileState extends State<DoctorProfilePage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Color(0xff053F5E),
+        backgroundColor: Color(0xFF00abff),
         centerTitle: true,
         leading: GestureDetector(
           onTap: () {
@@ -54,7 +54,7 @@ class _DoctorProfileState extends State<DoctorProfilePage> {
             Container(
               height: 200,
               decoration: BoxDecoration(
-                  color: Color(0xff053F5E),
+                  color: Color(0xFF00abff),
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(30),
                       bottomRight: Radius.circular(30))),
@@ -356,7 +356,7 @@ class _DoctorProfileState extends State<DoctorProfilePage> {
               height: 54,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: Color(0xff107163),
+                color: Color(0xFF00abff),
                 borderRadius: BorderRadius.circular(5),
                 boxShadow: [
                   BoxShadow(
