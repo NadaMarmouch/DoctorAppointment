@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:doctor_appointment/widget/toprated.dart';
 import 'package:doctor_appointment/widget/doctor_name.dart';
-
+import 'package:provider/provider.dart';
+import 'doctor_profile.dart';
 
 class DoctorDetailPage extends StatefulWidget {
   @override
