@@ -4,6 +4,7 @@ import 'package:doctor_appointment/widget/doctor_dates.dart';
 import 'package:doctor_appointment/widget/doctor_timing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:doctor_appointment/widget/appbar.dart';
 
 class DoctorProfilePage extends StatefulWidget {
   @override
@@ -35,17 +36,6 @@ class _DoctorProfileState extends State<DoctorProfilePage> {
             color: Colors.white,
           ),
         ),
-        actions: [
-          GestureDetector(
-            child: Container(
-              margin: EdgeInsets.only(right: 15),
-              child: Icon(
-                Icons.notifications_rounded,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ],
       ),
       body: SingleChildScrollView(
         child: Column(
