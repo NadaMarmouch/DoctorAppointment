@@ -7,7 +7,7 @@ class RatingsPage extends StatefulWidget {
 }
 
 class _RatingsPage extends State<RatingsPage> {
- int? _rating;
+  int? _rating;
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +17,15 @@ class _RatingsPage extends State<RatingsPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-               const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Enter a Feedback or any comments',
-            ),
-          ),
-        ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter a Feedback or any comments',
+                  ),
+                ),
+              ),
               Rating((rating) {
                 setState(() {
                   _rating = rating;
@@ -36,7 +36,18 @@ class _RatingsPage extends State<RatingsPage> {
                   child: (_rating != null && _rating != 0)
                       ? Text("You selected $_rating rating",
                           style: TextStyle(fontSize: 18))
-                      : SizedBox.shrink())
+                      : SizedBox.shrink()),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text("Submit",
+                    style: TextStyle(
+                        fontSize: 15, letterSpacing: 2, color: Colors.white)),
+                style: OutlinedButton.styleFrom(
+                    primary: Colors.blue,
+                    padding: EdgeInsets.symmetric(horizontal: 50),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20))),
+              )
             ],
           ),
         ));
