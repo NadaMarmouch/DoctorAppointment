@@ -1,7 +1,6 @@
 import 'package:doctor_appointment/screens/editprofile.dart';
 import 'package:doctor_appointment/screens/viewappointments.dart';
 import 'package:flutter/material.dart';
-
 import 'screens/signup.dart';
 import 'screens/home_page.dart';
 import 'screens/doctor_details.dart';

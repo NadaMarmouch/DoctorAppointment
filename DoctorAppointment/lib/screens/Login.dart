@@ -136,7 +136,7 @@ class _LoginPageState extends State<LoginPage> {
                         ]),
                     child: TextFormField(
                       validator: (value){
-                        if(value!.length>8){
+                        if(value!.length<7){
                           return 'Please enter Your Password';
                         }
                         return null;
