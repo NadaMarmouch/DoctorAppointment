@@ -351,32 +351,36 @@ class _DoctorProfileState extends State<DoctorProfilePage> {
               ),
             ),
             Container(
-              alignment: Alignment.center,
-              width: MediaQuery.of(context).size.width,
-              height: 54,
-              margin: EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Color(0xFF00abff),
-                borderRadius: BorderRadius.circular(5),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x17000000),
-                    offset: Offset(0, 15),
-                    blurRadius: 15,
-                    spreadRadius: 0,
-                  ),
-                ],
-              ),
-              child: Text(
-                'Make An Appointment',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w500,
+                alignment: Alignment.center,
+                width: MediaQuery.of(context).size.width,
+                height: 54,
+                margin: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Color(0xFF00abff),
+                  borderRadius: BorderRadius.circular(5),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0x17000000),
+                      offset: Offset(0, 15),
+                      blurRadius: 15,
+                      spreadRadius: 0,
+                    ),
+                  ],
                 ),
-              ),
-            ),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, "/appoiment");
+                  },
+                  child: Text(
+                    'Make An Appointment',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                )),
           ],
         ),
       ),
