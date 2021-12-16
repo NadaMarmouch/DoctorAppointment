@@ -63,7 +63,7 @@ class doctorTimingsData extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(left: 2),
                   child: Text(
-                    '08:30 AM',
+                    '09:00 AM',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 14,

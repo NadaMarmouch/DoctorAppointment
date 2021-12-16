@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class toprated extends  StatelessWidget {
@@ -24,6 +26,8 @@ class toprated extends  StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal:30,
         vertical: 18),
         child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Image.asset(img, height: 40,),
        SizedBox(width: 10,),
@@ -41,6 +45,7 @@ class toprated extends  StatelessWidget {
               ],
             ),
               Container(
+                alignment: AlignmentDirectional.topCenter,
               padding: EdgeInsets.symmetric(horizontal: 15,
               vertical: 5),
               margin: EdgeInsets.symmetric(horizontal: 25.0),

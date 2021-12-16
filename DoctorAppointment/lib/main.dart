@@ -1,7 +1,7 @@
+import 'package:doctor_appointment/screens/Appoiments.dart';
 import 'package:doctor_appointment/screens/editprofile.dart';
 import 'package:doctor_appointment/screens/viewappointments.dart';
 import 'package:flutter/material.dart';
-
 import 'screens/signup.dart';
 import 'screens/home_page.dart';
 import 'screens/doctor_details.dart';
@@ -11,6 +11,7 @@ import 'screens/profile.dart';
 import 'screens/first_screen.dart';
 import 'screens/doctor_profile.dart';
 import 'screens/notifications.dart';
+import 'screens/Appoiments.dart';
 import 'package:doctor_appointment/screens/ratingpage.dart';
 
 void main() {
@@ -30,6 +31,7 @@ void main() {
       '/rate': (context) => RatingsPage(),
       '/notify': (context) => Notifications(),
       '/viewappoint': (context) => ViewAppointment(),
+      '/appoiment': (context) => Appoiments(),
     },
   ));
 }

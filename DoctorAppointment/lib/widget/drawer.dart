@@ -23,7 +23,7 @@ class Drawers extends StatelessWidget {
           ListTile(
             title: const Text('Home page'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(context,'/home');
             },
           ),
           ListTile(

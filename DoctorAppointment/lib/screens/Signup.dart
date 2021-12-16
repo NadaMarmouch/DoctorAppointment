@@ -185,7 +185,7 @@ final _formKey = GlobalKey<FormState>();
                         ]),
                     child: TextFormField(
                       validator: (value){
-                        if(value!.length>8){
+                        if(value!.length>7){
                           return 'Please enter your password';
                         }
                         return null;
