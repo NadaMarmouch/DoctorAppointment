@@ -26,6 +26,8 @@ class doctor_name extends StatelessWidget{
         padding: EdgeInsets.symmetric(horizontal:20,
         vertical: 16),
         child: Row(
+           mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Image.asset(img, height: 30,),
        SizedBox(width: 7,),

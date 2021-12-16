@@ -4,6 +4,7 @@ import 'package:doctor_appointment/widget/doctor_dates.dart';
 import 'package:doctor_appointment/widget/doctor_timing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:doctor_appointment/widget/appbar.dart';
 
 class DoctorProfilePage extends StatefulWidget {
   @override
@@ -35,17 +36,6 @@ class _DoctorProfileState extends State<DoctorProfilePage> {
             color: Colors.white,
           ),
         ),
-        actions: [
-          GestureDetector(
-            child: Container(
-              margin: EdgeInsets.only(right: 15),
-              child: Icon(
-                Icons.notifications_rounded,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -218,7 +208,7 @@ class _DoctorProfileState extends State<DoctorProfilePage> {
                             select1[1] = true;
                           });
                         },
-                        child: doctorTimingsData("08:30 AM", select1[1])),
+                        child: doctorTimingsData("09:20 AM", select1[1])),
                     GestureDetector(
                         onTap: () {
                           setState(() {
@@ -228,7 +218,7 @@ class _DoctorProfileState extends State<DoctorProfilePage> {
                             select1[2] = true;
                           });
                         },
-                        child: doctorTimingsData("08:30 AM", select1[2])),
+                        child: doctorTimingsData("10:45 AM", select1[2])),
                     GestureDetector(
                         onTap: () {
                           setState(() {
@@ -238,7 +228,7 @@ class _DoctorProfileState extends State<DoctorProfilePage> {
                             select1[3] = true;
                           });
                         },
-                        child: doctorTimingsData("09:00 AM", select1[3])),
+                        child: doctorTimingsData("11:00 AM", select1[3])),
                     GestureDetector(
                       onTap: () {
                         setState(() {
@@ -248,7 +238,7 @@ class _DoctorProfileState extends State<DoctorProfilePage> {
                           select1[4] = true;
                         });
                       },
-                      child: doctorTimingsData("09:30 AM", select1[4]),
+                      child: doctorTimingsData("12:30 AM", select1[4]),
                     ),
                     GestureDetector(
                       onTap: () {
@@ -259,7 +249,7 @@ class _DoctorProfileState extends State<DoctorProfilePage> {
                           select1[5] = true;
                         });
                       },
-                      child: doctorTimingsData("10:00 AM", select1[5]),
+                      child: doctorTimingsData("01:00 AM", select1[5]),
                     ),
                   ],
                 ),

@@ -136,7 +136,7 @@ class _LoginPageState extends State<LoginPage> {
                         ]),
                     child: TextFormField(
                       validator: (value){
-                        if(value!.isEmpty){
+                        if(value!.length<7){
                           return 'Please enter Your Password';
                         }
                         return null;
@@ -163,7 +163,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   Spacer(),
-                  InkWell(
+                  GestureDetector(
                       onTap: (){
                         Navigator.pushNamed(context, '/signup');
                       },
@@ -198,7 +198,7 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 50,
             ),
-            InkWell(
+            GestureDetector(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

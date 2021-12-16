@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:doctor_appointment/theme/theme.dart';
 
-
 class firstscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-           body: Stack(
+      body: Stack(
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
@@ -57,40 +56,46 @@ class firstscreen extends StatelessWidget {
                 child: SizedBox(),
               ),
               Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {
-                           Navigator.pushNamed(context, '/login');
-                        },
-                        child: Text("Login",
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/login');
+                    },
+                    child: Text(
+                      "Login",
+                      style: TextStyle(
+                        fontSize: 15,
+                        letterSpacing: 2,
+                      ),
+                    ),
+                    style: OutlinedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(horizontal: 50),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20))),
+                  ),
+                  SizedBox(height: 30),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/signup');
+                    },
+                    child: Text("signup",
                         style: TextStyle(
-                                fontSize: 15,
-                                letterSpacing: 2,),),
-                        style: OutlinedButton.styleFrom(
-                           padding: EdgeInsets.symmetric(horizontal: 50),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20))),           
-                          ),
-              SizedBox(height: 30),
-              ElevatedButton(onPressed: (){
-                Navigator.pushNamed(context, '/signup');
-              },
-              child: Text("signup",
-              style: TextStyle(
-                                fontSize: 15,
-                                letterSpacing: 2,
-                                color: Colors.white)),
-                        style: OutlinedButton.styleFrom(
-                            primary: Colors.blue,
-                            padding: EdgeInsets.symmetric(horizontal: 50),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20))
-                                ),),
+                            fontSize: 15,
+                            letterSpacing: 2,
+                            color: Colors.white)),
+                    style: OutlinedButton.styleFrom(
+                        primary: Colors.blue,
+                        padding: EdgeInsets.symmetric(horizontal: 50),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20))),
+                  ),
+                ],
+              ),
             ],
           ),
         ],
-      ),],),
+      ),
     );
-  }}
- 
+  }
+}

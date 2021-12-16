@@ -1,3 +1,4 @@
+import 'package:doctor_appointment/widget/drawer.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -24,44 +25,7 @@ class _EditProfileUIState extends State<EditProfileUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: Text('User Name'),
-              ),
-              ListTile(
-                title: const Text('Home page'),
-                onTap: () {
-                  Navigator.pop(context);
-                  Navigator.popAndPushNamed(context, '/homepage');
-                },
-              ),
-              ListTile(
-                title: const Text('Edit Profile'),
-                onTap: () {
-                  Navigator.pushNamed(context, '/editprofile');
-                },
-              ),
-              ListTile(
-                title: const Text('Rate'),
-                onTap: () {
-                  Navigator.pushNamed(context,'/rate');
-                },
-              ),
-              ListTile(
-                title: const Text('Logout'),
-                onTap: () {
-                  Navigator.pushNamed(context,'/');
-                },
-              ),
-            ],
-          ),
-        ),
+        drawer: Drawers(),
         appBar: AppBar(
           title: Text('Edit your profile'),
         ),

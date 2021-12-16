@@ -105,7 +105,7 @@ final _formKey = GlobalKey<FormState>();
                     child: TextFormField(
                       validator: (value){
                         if(value!.isEmpty){
-                          return 'Please enter this field';
+                          return 'Please enter your username';
                         }
                         return null;
                       },
@@ -132,7 +132,7 @@ final _formKey = GlobalKey<FormState>();
                     child: TextFormField(
                       validator: (value){
                         if(value!.isEmpty){
-                          return 'Please enter this field';
+                          return 'Please enter your email';
                         }
                         return null;
                       },
@@ -158,8 +158,8 @@ final _formKey = GlobalKey<FormState>();
                         ]),
                     child: TextFormField(
                       validator: (value){
-                        if(value!.isEmpty){
-                          return 'Please enter this field';
+                        if(value!.length>11){
+                          return 'Please enter your phonenumber';
                         }
                         return null;
                       },
@@ -185,8 +185,8 @@ final _formKey = GlobalKey<FormState>();
                         ]),
                     child: TextFormField(
                       validator: (value){
-                        if(value!.isEmpty){
-                          return 'Please enter this field';
+                        if(value!.length>7){
+                          return 'Please enter your password';
                         }
                         return null;
                       },
@@ -200,7 +200,7 @@ final _formKey = GlobalKey<FormState>();
                   SizedBox(
                     height: 15,
                   ),
-                  InkWell(
+                  GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, '/signup');
                     },
@@ -242,7 +242,7 @@ final _formKey = GlobalKey<FormState>();
                 ],
               ),
             ),
-            InkWell(
+            GestureDetector(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

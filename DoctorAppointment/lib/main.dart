@@ -1,8 +1,8 @@
 import 'dart:js';
 
 import 'package:doctor_appointment/screens/editprofile.dart';
+import 'package:doctor_appointment/screens/viewappointments.dart';
 import 'package:flutter/material.dart';
-
 import 'screens/signup.dart';
 import 'screens/home_page.dart';
 import 'screens/doctor_details.dart';
@@ -12,11 +12,15 @@ import 'screens/profile.dart';
 import 'screens/Appoiments.dart';
 import 'screens/first_screen.dart';
 import 'screens/doctor_profile.dart';
-import 'package:doctor_appointment/screens/ratingPage.dart';
+import 'screens/notifications.dart';
+import 'package:doctor_appointment/screens/ratingpage.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     title: 'Doctor Appointment',
+    theme: ThemeData(fontFamily: 'Tahoma'),
+    initialRoute: '/',
     routes: {
       /// '/': (context) => firstscreen(),
       '/': (context) => HomePage(),
