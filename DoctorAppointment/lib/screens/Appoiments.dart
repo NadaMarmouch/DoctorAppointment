@@ -29,7 +29,7 @@ class AppoimentsState extends State<Appoiments> {
             ListTile(
               title: const Text('Home page'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context,'/home');
               },
             ),
             ListTile(
@@ -41,7 +41,7 @@ class AppoimentsState extends State<Appoiments> {
             ListTile(
               title: const Text('My Appointment'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context,'/appoiment');
               },
             ),
             ListTile(
