@@ -26,6 +26,12 @@ class Drawers extends StatelessWidget {
               Navigator.pushNamed(context,'/home');
             },
           ),
+           ListTile(
+            title: const Text('Settings'),
+            onTap: () {
+              Navigator.pushNamed(context, '/settings');
+            },
+          ),
           ListTile(
             title: const Text('Edit Profile'),
             onTap: () {
@@ -36,6 +42,12 @@ class Drawers extends StatelessWidget {
             title: const Text('My Appointment'),
             onTap: () {
               Navigator.pop(context);
+            },
+          ),
+           ListTile(
+            title: const Text('Dr profile'),
+            onTap: () {
+              Navigator.pushNamed(context, '/drprofile');
             },
           ),
           ListTile(

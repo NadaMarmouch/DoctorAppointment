@@ -44,6 +44,13 @@ class _ProfileUIState extends State<ProfileUI> {
                   Navigator.popAndPushNamed(context, '/homepage');
                 },
               ),
+               ListTile(
+                title: const Text('Settings'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.popAndPushNamed(context, '/settings');
+                },
+              ),
               ListTile(
                 title: const Text('Edit Profile'),
                 onTap: () {
@@ -54,6 +61,12 @@ class _ProfileUIState extends State<ProfileUI> {
                 title: const Text('Rate'),
                 onTap: () {
                   Navigator.pop(context);
+                },
+              ),
+               ListTile(
+                title: const Text('Dr Profile'),
+                onTap: () {
+                  Navigator.pop(context,'/drprofile');
                 },
               ),
               ListTile(

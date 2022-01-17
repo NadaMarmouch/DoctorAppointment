@@ -9,15 +9,16 @@ import 'screens/login.dart';
 import 'screens/editprofile.dart';
 import 'screens/profile.dart';
 import 'screens/first_screen.dart';
-import 'screens/doctor_profile.dart';
+import 'screens/booking.dart';
 import 'screens/notifications.dart';
 import 'screens/Appoiments.dart';
 import 'package:doctor_appointment/screens/ratingpage.dart';
 import 'package:firebase_core/firebase_core.dart';
-
+import 'screens/drprofile.dart';
+import 'screens/aboutus.dart';
+import 'screens/settings.dart';
 void main() async{
-WidgetsFlutterBinding.ensureInitialized();
-await Firebase.initializeApp();
+
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     title: 'Doctor Appointment',
@@ -30,11 +31,14 @@ await Firebase.initializeApp();
       '/home': (context) => HomePage(),
       '/details': (context) => DoctorDetailPage(),
       '/editprofile': (context) => EditProfileUI(),
-      '/doctorreserve': (context) => DoctorProfilePage(),
+      '/doctorreserve': (context) => Booking(),
       '/rate': (context) => RatingsPage(),
       '/notify': (context) => Notifications(),
       '/viewappoint': (context) => ViewAppointment(),
       '/appoiment': (context) => Appoiments(),
+      '/drprofile': (context) => Drprofile(),
+       '/aboutus': (context) => AboutUs(),
+      '/settings': (context) => SettingsPage(),
     },
   ));
 }
