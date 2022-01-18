@@ -23,6 +23,7 @@ class HomePageState extends State<HomePage> {
         preferredSize: Size.fromHeight(50.0),
           child: TopBar("Doctor Appointment"),
         ),
+        
         body: Container(
             decoration: BoxDecoration(
                 color: Colors.grey[100],
@@ -38,6 +39,7 @@ class HomePageState extends State<HomePage> {
                       margin: EdgeInsets.only(top: 20, left: 20),
                       child: Text(
                         "Hi,......",
+                        
                         style: TextStyle(
                           color: Color(0xff363636),
                           fontSize: 25,

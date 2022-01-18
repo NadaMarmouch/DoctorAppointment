@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:doctor_appointment/theme/theme.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:provider/provider.dart';
+import 'package:doctor_appointment/services/auth.dart';
 
 class SignupPage extends StatefulWidget {
   @override
@@ -9,6 +12,8 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
 final _formKey = GlobalKey<FormState>();
+ final TextEditingController emailController = TextEditingController();
+final TextEditingController passwordController = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -226,6 +231,10 @@ final _formKey = GlobalKey<FormState>();
                                   ScaffoldMessenger.of(context) .showSnackBar(
                                   SnackBar(content: Text('Processing Data')));
                                 Navigator.pushNamed(context, '/home');
+
+                                context.read<AuthenticationService>().signup(
+                                email: emailController.text.trim(),
+                                password: passwordController.text.trim(), );
                                 }
 
 

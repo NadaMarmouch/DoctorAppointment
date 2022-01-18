@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:doctor_appointment/screens/Appoiments.dart';
 import 'package:doctor_appointment/screens/editprofile.dart';
 import 'package:doctor_appointment/screens/viewappointments.dart';
@@ -13,32 +15,92 @@ import 'screens/booking.dart';
 import 'screens/notifications.dart';
 import 'screens/Appoiments.dart';
 import 'package:doctor_appointment/screens/ratingpage.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'screens/drprofile.dart';
 import 'screens/aboutus.dart';
 import 'screens/settings.dart';
-void main() async{
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'services/auth.dart';
 
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: 'Doctor Appointment',
-    theme: ThemeData(fontFamily: 'Tahoma'),
-    initialRoute: '/',
-    routes: {
-      '/': (context) => firstscreen(),
-      '/signup': (context) => SignupPage(),
-      '/login': (context) => LoginPage(),
-      '/home': (context) => HomePage(),
-      '/details': (context) => DoctorDetailPage(),
-      '/editprofile': (context) => EditProfileUI(),
-      '/doctorreserve': (context) => Booking(),
-      '/rate': (context) => RatingsPage(),
-      '/notify': (context) => Notifications(),
-      '/viewappoint': (context) => ViewAppointment(),
-      '/appoiment': (context) => Appoiments(),
-      '/drprofile': (context) => Drprofile(),
-       '/aboutus': (context) => AboutUs(),
-      '/settings': (context) => SettingsPage(),
-    },
-  ));
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(MyApp());
 }
+
+class MyApp extends StatelessWidget {
+  final _fbApp =Firebase.initializeApp();
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        Provider<AuthenticationService>(
+          create: (_) => AuthenticationService(FirebaseAuth.instance),
+        ),
+        StreamProvider(
+          create: (context) => context.read<AuthenticationService>().authStateChanges,
+          initialData: null,
+        )
+      ],
+      child: MaterialApp(
+        title: 'Doctor Appointment',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+         initialRoute: '/',
+         routes: {
+       '/': (context) => firstscreen(),
+       '/signup': (context) => SignupPage(),
+       '/login': (context) => LoginPage(),
+       '/home': (context) => HomePage(),
+       '/details': (context) => DoctorDetailPage(),
+       '/editprofile': (context) => EditProfileUI(),
+       '/doctorreserve': (context) => Booking(),
+       '/rate': (context) => RatingsPage(),
+       '/notify': (context) => Notifications(),
+       '/viewappoint': (context) => ViewAppointment(),
+       '/appoiment': (context) => Appoiments(),
+       '/drprofile': (context) => Drprofile(),
+        '/aboutus': (context) => AboutUs(),
+       '/settings': (context) => SettingsPage(),
+     },
+        home: FutureBuilder(
+          future: _fbApp,
+          builder: (context,snapshot){
+            if (snapshot.hasError){
+              return Dialog();
+
+            }else if (snapshot.hasData){
+              return AuthenticationWrapper();
+            }
+            else {
+              return CircularProgressIndicator();
+            }
+          }
+        ),
+      ),
+    );
+  }
+}
+
+class AuthenticationWrapper extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final firebaseUser = context.watch<User>();
+
+    if (firebaseUser != null) {
+      return HomePage();
+    }
+    return LoginPage();
+  }
+}
+// void main() async{
+//   runApp(MaterialApp(
+//     debugShowCheckedModeBanner: false,
+//     title: 'Doctor Appointment',
+//     theme: ThemeData(fontFamily: 'Tahoma'),
+    
+ //  ));
+// }

@@ -1,9 +1,13 @@
+import 'package:doctor_appointment/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:doctor_appointment/theme/theme.dart';
-
+import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
+  
+   
   @override
   State<StatefulWidget> createState() {
     return _LoginPageState();
@@ -12,6 +16,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
+   final TextEditingController emailController = TextEditingController();
+   final TextEditingController passwordController = TextEditingController();
   
   @override
   void initState() {
@@ -186,11 +192,10 @@ class _LoginPageState extends State<LoginPage> {
                                   TextButton.styleFrom(primary: Colors.white),
                               // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                               onPressed: () {
-                                 if(_formKey.currentState!.validate()){
-                                  ScaffoldMessenger.of(context) .showSnackBar(
-                                  SnackBar(content: Text('Processing Data')));
-                                Navigator.pushNamed(context, '/home');
-                               } })),
+                                context.read<AuthenticationService>().signin(
+                                email: emailController.text.trim(),
+                                password: passwordController.text.trim(), );
+                              }))
                     ),
                   ),
                 ],

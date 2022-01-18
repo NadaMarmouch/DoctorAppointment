@@ -5,6 +5,7 @@ INJECTED from C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\android\app\sr
 INJECTED from C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\android\app\src\main\AndroidManifest.xml:1:1-41:12
 INJECTED from C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\android\app\src\main\AndroidManifest.xml:1:1-41:12
 MERGED from C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\android\app\src\main\AndroidManifest.xml:1:1-41:12
+MERGED from [:firebase_auth] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:animated_theme_switcher] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\animated_theme_switcher\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Nada\.gradle\caches\transforms-2\files-2.1\bc497780c1ce60ed2e7015258fc2513f\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
@@ -62,6 +63,8 @@ INJECTED from C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\android\app\sr
 		ADDED from C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\android\app\src\main\AndroidManifest.xml:1:11-69
 application
 ADDED from C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\android\app\src\main\AndroidManifest.xml:3:4-40:19
+MERGED from [:firebase_auth] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_auth] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Nada\.gradle\caches\transforms-2\files-2.1\cb85e813550ceb859d5d8655b705694f\jetified-firebase-auth-21.0.1\AndroidManifest.xml:26:5-81:19
@@ -134,6 +137,8 @@ uses-sdk
 INJECTED from C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\android\app\src\main\AndroidManifest.xml
+MERGED from [:firebase_auth] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_auth] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:animated_theme_switcher] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\animated_theme_switcher\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
@@ -225,7 +230,9 @@ MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Nada\.gradle\cac
 	android:name
 		ADDED from C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\android\app\src\debug\AndroidManifest.xml:6:22-64
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [:firebase_core] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+ADDED from [:firebase_auth] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_core] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_core] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Nada\.gradle\caches\transforms-2\files-2.1\cb85e813550ceb859d5d8655b705694f\jetified-firebase-auth-21.0.1\AndroidManifest.xml:74:9-80:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Nada\.gradle\caches\transforms-2\files-2.1\cb85e813550ceb859d5d8655b705694f\jetified-firebase-auth-21.0.1\AndroidManifest.xml:74:9-80:19
 MERGED from [com.google.firebase:firebase-common:20.0.0] C:\Users\Nada\.gradle\caches\transforms-2\files-2.1\e8c12af64c0d197211b7d090cb61cdf8\jetified-firebase-common-20.0.0\AndroidManifest.xml:33:9-37:35
@@ -237,7 +244,13 @@ MERGED from [com.google.firebase:firebase-common:20.0.0] C:\Users\Nada\.gradle\c
 	android:directBootAware
 		ADDED from [com.google.firebase:firebase-common:20.0.0] C:\Users\Nada\.gradle\caches\transforms-2\files-2.1\e8c12af64c0d197211b7d090cb61cdf8\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
 	android:name
-		ADDED from [:firebase_core] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+		ADDED from [:firebase_auth] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar
+ADDED from [:firebase_auth] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:firebase_auth] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:firebase_auth] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar
 ADDED from [:firebase_core] C:\xampp\htdocs\DoctorAppointment\DoctorAppointment\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 	android:value
