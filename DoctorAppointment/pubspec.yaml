@@ -33,6 +33,7 @@ dependencies:
   flutter_screenutil: ^5.1.0
   animated_theme_switcher: ^1.0.3
   settings_ui: ^2.0.1
+  rename: ^2.0.1
 
   flutter:
     sdk: flutter
