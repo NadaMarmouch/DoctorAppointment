@@ -33,6 +33,35 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1002124065169:android:f543790fa937e595858230",
+        "android_client_info": {
+          "package_name": "eg.edu.miuegypt.csc422.doctorappointment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1002124065169-dmulqv4jum7ksg1rg9bh8jgvltred9me.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4gSvEVaMf2en_uPZ2-dDP5N_yc8jW2iI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1002124065169-dmulqv4jum7ksg1rg9bh8jgvltred9me.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

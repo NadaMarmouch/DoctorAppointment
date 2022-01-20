@@ -3,7 +3,7 @@
     <string name="default_web_client_id" translatable="false">1002124065169-dmulqv4jum7ksg1rg9bh8jgvltred9me.apps.googleusercontent.com</string>
     <string name="gcm_defaultSenderId" translatable="false">1002124065169</string>
     <string name="google_api_key" translatable="false">AIzaSyB4gSvEVaMf2en_uPZ2-dDP5N_yc8jW2iI</string>
-    <string name="google_app_id" translatable="false">1:1002124065169:android:c4c68b9cc05a1496858230</string>
+    <string name="google_app_id" translatable="false">1:1002124065169:android:f543790fa937e595858230</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB4gSvEVaMf2en_uPZ2-dDP5N_yc8jW2iI</string>
     <string name="google_storage_bucket" translatable="false">doctor-appointment-708a8.appspot.com</string>
     <string name="project_id" translatable="false">doctor-appointment-708a8</string>

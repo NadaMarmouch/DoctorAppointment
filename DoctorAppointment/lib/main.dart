@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:doctor_appointment/screens/Appoiments.dart';
 import 'package:doctor_appointment/screens/editprofile.dart';
 import 'package:doctor_appointment/screens/viewappointments.dart';
@@ -70,13 +68,15 @@ class MyApp extends StatelessWidget {
           future: _fbApp,
           builder: (context,snapshot){
             if (snapshot.hasError){
-              return Dialog();
+              //return Dialog();
+              return Text("text");
 
             }else if (snapshot.hasData){
               return AuthenticationWrapper();
             }
             else {
-              return CircularProgressIndicator();
+             // return CircularProgressIndicator();
+             return Text("text2");
             }
           }
         ),
@@ -88,7 +88,7 @@ class MyApp extends StatelessWidget {
 class AuthenticationWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final firebaseUser = context.watch<User>();
+    final firebaseUser = context.watch<User?>();
 
     if (firebaseUser != null) {
       return HomePage();
