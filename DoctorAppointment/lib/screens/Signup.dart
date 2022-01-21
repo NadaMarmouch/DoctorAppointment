@@ -4,6 +4,7 @@ import 'package:doctor_appointment/theme/theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:doctor_appointment/services/auth.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
 
 class SignupPage extends StatefulWidget {
   @override
@@ -11,14 +12,41 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  var password,email;
 final _formKey = GlobalKey<FormState>();
- final TextEditingController emailController = TextEditingController();
-final TextEditingController passwordController = TextEditingController();
+ //final TextEditingController emailController = TextEditingController();
+//final TextEditingController passwordController = TextEditingController();
   @override
   void initState() {
     super.initState();
   }
-
+signup() async{
+    var formdata = _formKey.currentState;
+    if(formdata!.validate()){
+      print('valid');
+      formdata.save();
+      try{
+        UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+       return userCredential;
+      }on FirebaseException catch(e){
+        if(e.code=='weak password'){
+          AwesomeDialog(
+            context:context,
+            title:"error",
+            body:Text("password is weak")
+          );
+        }else if(e.code=='email already taken'){
+           AwesomeDialog(
+            context:context,
+            title:"error",
+            body:Text("Email is already exist")
+          );
+        }
+      }catch(e){
+        print(e);
+      }
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Form
@@ -107,6 +135,7 @@ final TextEditingController passwordController = TextEditingController();
                         boxShadow: [
                           BoxShadow(color: Colors.black12, blurRadius: 5)
                         ]),
+                        key: _formKey,
                     child: TextFormField(
                       validator: (value){
                         if(value!.isEmpty){
@@ -190,7 +219,7 @@ final TextEditingController passwordController = TextEditingController();
                         ]),
                     child: TextFormField(
                       validator: (value){
-                        if(value!.length>7){
+                        if(value!.length>6){
                           return 'Please enter your password';
                         }
                         return null;
@@ -226,16 +255,23 @@ final TextEditingController passwordController = TextEditingController();
                               style:
                                   TextButton.styleFrom(primary: Colors.white),
                               // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                              onPressed: () {
-                                if(_formKey.currentState!.validate()){
-                                  ScaffoldMessenger.of(context) .showSnackBar(
-                                  SnackBar(content: Text('Processing Data')));
-                                Navigator.pushNamed(context, '/home');
+                              onPressed: ()   async{
+                               var user= await signup();
+                               if(user !=null){
+                               Navigator.pushNamed(context, '/home');
+                               }else{
+                                 print('sign in is failed');
+                               }
 
-                                context.read<AuthenticationService>().signup(
-                                email: emailController.text.trim(),
-                                password: passwordController.text.trim(), );
-                                }
+                                //if(_formKey.currentState!.validate()){
+                                 // ScaffoldMessenger.of(context) .showSnackBar(
+                                  //SnackBar(content: Text('Processing Data')));
+                                
+
+                               // context.read<AuthenticationService>().signup(
+                               // email: emailController.text.trim(),
+                               // password: passwordController.text.trim(), );
+                               // }
 
 
                                 

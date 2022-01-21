@@ -50,6 +50,12 @@ class Drawers extends StatelessWidget {
               Navigator.pushNamed(context, '/drprofile');
             },
           ),
+           ListTile(
+            title: const Text('Google Map'),
+            onTap: () {
+              Navigator.pushNamed(context,'/map');
+            },
+          ),
           ListTile(
             title: const Text('Rate'),
             onTap: () {

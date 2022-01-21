@@ -16,9 +16,29 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
-   final TextEditingController emailController = TextEditingController();
-   final TextEditingController passwordController = TextEditingController();
+  var password,email;
+ //  final TextEditingController emailController = TextEditingController();
+   //final TextEditingController passwordController = TextEditingController();
   
+  signin() async{
+    var formdata = _formKey.currentState;
+    if(formdata!.validate()){
+      print('validation');
+      formdata.save();
+      try{
+        UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: 'nada', password: '1234567');
+       return userCredential;
+      }on FirebaseException catch(e){
+        if(e.code=='user not found'){
+        print('No User found');
+        }else if(e.code=='wrong password'){
+          print('re enter the password');
+        }
+      }catch(e){
+        print(e);
+      }
+    }
+  }
   @override
   void initState() {
     super.initState();
@@ -191,10 +211,15 @@ class _LoginPageState extends State<LoginPage> {
                               style:
                                   TextButton.styleFrom(primary: Colors.white),
                               // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                              onPressed: () {
-                                context.read<AuthenticationService>().signin(
-                                email: emailController.text.trim(),
-                                password: passwordController.text.trim(), );
+                              onPressed: () async{
+                               var user= await signin();
+                               //print(user.toString());
+                               if(user !=null){
+                               Navigator.pushNamed(context, '/home');
+                               }else{
+                                 print('sign in is failed');
+                               }
+                                
                               }))
                     ),
                   ),

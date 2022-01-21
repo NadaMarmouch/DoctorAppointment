@@ -24,30 +24,19 @@ import 'services/auth.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(MyApp());
 }
-
 class MyApp extends StatelessWidget {
-  final _fbApp =Firebase.initializeApp();
+
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        Provider<AuthenticationService>(
-          create: (_) => AuthenticationService(FirebaseAuth.instance),
-        ),
-        StreamProvider(
-          create: (context) => context.read<AuthenticationService>().authStateChanges,
-          initialData: null,
-        )
-      ],
-      child: MaterialApp(
-        title: 'Doctor Appointment',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-         initialRoute: '/',
+    return (MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: 'Doctor Appointment',
+    theme: ThemeData(fontFamily: 'Tahoma'),
+     initialRoute: '/',
          routes: {
        '/': (context) => firstscreen(),
        '/signup': (context) => SignupPage(),
@@ -63,44 +52,78 @@ class MyApp extends StatelessWidget {
        '/drprofile': (context) => Drprofile(),
         '/aboutus': (context) => AboutUs(),
        '/settings': (context) => SettingsPage(),
-     },
-        home: FutureBuilder(
-          future: _fbApp,
-          builder: (context,snapshot){
-            if (snapshot.hasError){
-              //return Dialog();
-              return Text("text");
-
-            }else if (snapshot.hasData){
-              return AuthenticationWrapper();
-            }
-            else {
-             // return CircularProgressIndicator();
-             return Text("text2");
-            }
-          }
-        ),
-      ),
-    );
-  }
+         }));
 }
 
-class AuthenticationWrapper extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final firebaseUser = context.watch<User?>();
+  
 
-    if (firebaseUser != null) {
-      return HomePage();
-    }
-    return LoginPage();
-  }
-}
-// void main() async{
-//   runApp(MaterialApp(
-//     debugShowCheckedModeBanner: false,
-//     title: 'Doctor Appointment',
-//     theme: ThemeData(fontFamily: 'Tahoma'),
-    
- //  ));
+// class MyApp extends StatelessWidget {
+//   final _fbApp =Firebase.initializeApp();
+//   @override
+//   Widget build(BuildContext context) {
+//     return MultiProvider(
+//       providers: [
+//         Provider<AuthenticationService>(
+//           create: (_) => AuthenticationService(FirebaseAuth.instance),
+//         ),
+//         StreamProvider(
+//           create: (context) => context.read<AuthenticationService>().authStateChanges,
+//           initialData: null,
+//         )
+//       ],
+//       child: MaterialApp(
+//         title: 'Doctor Appointment',
+//         theme: ThemeData(
+//           primarySwatch: Colors.blue,
+//           visualDensity: VisualDensity.adaptivePlatformDensity,
+//         ),
+//          initialRoute: '/',
+//          routes: {
+//        '/': (context) => firstscreen(),
+//        '/signup': (context) => SignupPage(),
+//        '/login': (context) => LoginPage(),
+//        '/home': (context) => HomePage(),
+//        '/details': (context) => DoctorDetailPage(),
+//        '/editprofile': (context) => EditProfileUI(),
+//        '/doctorreserve': (context) => Booking(),
+//        '/rate': (context) => RatingsPage(),
+//        '/notify': (context) => Notifications(),
+//        '/viewappoint': (context) => ViewAppointment(),
+//        '/appoiment': (context) => Appoiments(),
+//        '/drprofile': (context) => Drprofile(),
+//         '/aboutus': (context) => AboutUs(),
+//        '/settings': (context) => SettingsPage(),
+//      },
+//         home: FutureBuilder(
+//           future: _fbApp,
+//           builder: (context,snapshot){
+//             if (snapshot.hasError){
+//               //return Dialog();
+//               return Text("text");
+
+//             }else if (snapshot.hasData){
+//               return Text("text");
+//             }
+//             else {
+//              // return CircularProgressIndicator();
+//              return Text("text2");
+//             }
+//           }
+//         ),
+//       ),
+//     );
+//   }
 // }
+
+// class AuthenticationWrapper extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     final firebaseUser = context.watch<User?>();
+
+//     if (firebaseUser != null) {
+//       return HomePage();
+//     }
+//     return LoginPage();
+//   }
+// }
+}
