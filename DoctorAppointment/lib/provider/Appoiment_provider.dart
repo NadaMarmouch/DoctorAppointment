@@ -7,7 +7,7 @@ class AppoimentProvider extends ChangeNotifier {
 
  List<appoiment> x=[appoiment("mohamed","Heart","17/2/2021","20:10")];
 
-AppoimentProvider(this.appoiments);
+
   List<appoiment> get appoimentlist => x;
   addAppoiment(String DrName, String time, String date, String DrType) 
   {

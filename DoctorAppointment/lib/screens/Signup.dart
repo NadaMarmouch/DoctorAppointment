@@ -4,7 +4,7 @@ import 'package:doctor_appointment/theme/theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:doctor_appointment/services/auth.dart';
-import 'package:awesome_dialog/awesome_dialog.dart';
+//import 'package:awesome_dialog/awesome_dialog.dart';
 
 class SignupPage extends StatefulWidget {
   @override
@@ -14,38 +14,40 @@ class SignupPage extends StatefulWidget {
 class _SignupPageState extends State<SignupPage> {
   var password, email;
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController emailController = TextEditingController();
-final TextEditingController passwordController = TextEditingController();
+  //final TextEditingController emailController = TextEditingController();
+//final TextEditingController passwordController = TextEditingController();
   @override
   void initState() {
     super.initState();
   }
 
-  // signup() async {
-  //   var formdata = _formKey.currentState;
-  //   if (formdata!.validate()) {
-  //     print('valid');
-  //     formdata.save();
-  //     try {
-  //       UserCredential userCredential = await FirebaseAuth.instance
-  //           .signInWithEmailAndPassword(email: email, password: password);
-  //       return userCredential;
-  //     } on FirebaseException catch (e) {
-  //       if (e.code == 'weak password') {
-  //         AwesomeDialog(
-  //             context: context, title: "error", body: Text("password is weak"));
-  //       } else if (e.code == 'email already taken') {
-  //         AwesomeDialog(
-  //             context: context,
-  //             title: "error",
-  //             body: Text("Email is already exist"));
-  //       }
-  //     } catch (e) {
-  //       print(e);
-  //     }
-  //   }
-  // }
-
+// signup() async{
+//     var formdata = _formKey.currentState;
+//     if(formdata!.validate()){
+//       print('valid');
+//       formdata.save();
+//       try{
+//         UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+//        return userCredential;
+//       }on FirebaseException catch(e){
+//         if(e.code=='weak password'){
+//           AwesomeDialog(
+//             context:context,
+//             title:"error",
+//             body:Text("password is weak")
+//           );
+//         }else if(e.code=='email already taken'){
+//            AwesomeDialog(
+//             context:context,
+//             title:"error",
+//             body:Text("Email is already exist")
+//           );
+//         }
+//       }catch(e){
+//         print(e);
+//       }
+//     }
+//   }
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -170,7 +172,7 @@ final TextEditingController passwordController = TextEditingController();
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Email',
-                          ),
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -254,21 +256,21 @@ final TextEditingController passwordController = TextEditingController();
                                     TextButton.styleFrom(primary: Colors.white),
                                 // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                                 onPressed: () async {
-                                  // var user = await signup();
-                                  // if (user != null) {
-                                  //   Navigator.pushNamed(context, '/home');
-                                  // } else {
-                                  //   print('sign in is failed');
+                                  //  var user= await signup();
+                                  //  if(user !=null){
+                                  //  Navigator.pushNamed(context, '/home');
+                                  //  }else{
+                                  //    print('sign in is failed');
+                                  //  }
+
+                                  //if(_formKey.currentState!.validate()){
+                                  // ScaffoldMessenger.of(context) .showSnackBar(
+                                  //SnackBar(content: Text('Processing Data')));
+
+                                  // context.read<AuthenticationService>().signup(
+                                  // email: emailController.text.trim(),
+                                  // password: passwordController.text.trim(), );
                                   // }
-
-                                  if(_formKey.currentState!.validate()){
-                                  ScaffoldMessenger.of(context) .showSnackBar(
-                                  SnackBar(content: Text('Processing Data')));
-
-                                  context.read<AuthenticationService>().signup(
-                                  email: emailController.text.trim(),
-                                  password: passwordController.text.trim(), );
-                                  }
                                 })
                             //child: Text(
                             //  'Sign Up'.toUpperCase(),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:doctor_appointment/widget/Appoiments_item.dart';
+import 'package:doctor_appointment/provider/Appoiment_provider.dart';
+import 'package:provider/provider.dart';
 
 class Appoiments extends StatefulWidget {
   @override
@@ -8,13 +10,12 @@ class Appoiments extends StatefulWidget {
 
 class AppoimentsState extends State<Appoiments> {
   @override
-  Widget build(BuildContext context) {
-    return initScreen();
-  }
 
-  Widget initScreen() {
+  Widget build(BuildContext context) {
+  {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
+    return ChangeNotifierProvider(create: (context)=>AppoimentProvider(),
+    child:Scaffold(
       backgroundColor: Color(0xFF00abff),
       drawer: Drawer(
         child: ListView(
@@ -139,7 +140,7 @@ class AppoimentsState extends State<Appoiments> {
           ],
         ),
       ),
-    );
+    ));
   }
 
   Widget demoCategories(String img, String name, String drCount) {
@@ -189,4 +190,4 @@ class AppoimentsState extends State<Appoiments> {
       ),
     );
   }
-}
+}}
