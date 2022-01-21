@@ -12,8 +12,8 @@ class LatLng {
     required this.lat,
     required this.lng,
   });
-  factory LatLng.fromJson(Map<String, dynamic> json)=> _$LatLngFromJson(json);
-  Map<String, dynamic> toJson()=>_$LatLngToJson(this);
+  factory LatLng.fromJson(Map<String, dynamic> json) => _$LatLngFromJson(json);
+  Map<String, dynamic> toJson() => _$LatLngToJson(this);
 
   final double lat;
   final double lng;
@@ -27,8 +27,8 @@ class Region {
     required this.name,
     required this.zoom,
   });
-factory Region.fromJson(Map<String, dynamic> json)=> _$RegionFromJson(json);
-Map<String, dynamic> toJson()=>_$RegionToJson(this);
+  factory Region.fromJson(Map<String, dynamic> json) => _$RegionFromJson(json);
+  Map<String, dynamic> toJson() => _$RegionToJson(this);
   final LatLng coords;
   final String id;
   final String name;
@@ -47,8 +47,8 @@ class Office {
     required this.phone,
     required this.region,
   });
-factory Office.fromJson(Map<String, dynamic> json)=> _$OfficeFromJson(json);
-Map<String, dynamic> toJson()=>_$OfficeToJson(this);
+  factory Office.fromJson(Map<String, dynamic> json) => _$OfficeFromJson(json);
+  Map<String, dynamic> toJson() => _$OfficeToJson(this);
 
   final String address;
   final String id;
@@ -66,23 +66,22 @@ class Locations {
     required this.offices,
     required this.regions,
   });
-factory Locations.fromJson(Map<String, dynamic> json)=> _$LocationsFromJson(json);
-Map<String, dynamic> toJson()=>_$LocationsToJson(this);
+  factory Locations.fromJson(Map<String, dynamic> json) =>
+      _$LocationsFromJson(json);
+  Map<String, dynamic> toJson() => _$LocationsToJson(this);
 
   final List<Office> offices;
   final List<Region> regions;
 }
 
-Future<Locations?>getGoogleOffices()async{
-  const googleLocationURL='https://about.google/static/data/locations.json';
-  try{
-    final response= await http.get(Uri.parse(googleLocationURL));
-    if(response.statusCode==200){
+Future<Locations?> getGoogleOffices() async {
+  const googleLocationURL = 'https://about.google/static/data/locations.json';
+  try {
+    final response = await http.get(Uri.parse(googleLocationURL));
+    if (response.statusCode == 200) {
       return Locations.fromJson(json.decode(response.body));
-
     }
-  }
-  catch(e){
+  } catch (e) {
     print(e);
   }
 }

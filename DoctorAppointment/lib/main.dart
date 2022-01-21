@@ -1,5 +1,6 @@
 import 'package:doctor_appointment/screens/Appoiments.dart';
 import 'package:doctor_appointment/screens/editprofile.dart';
+//import 'package:doctor_appointment/screens/google_map.dart';
 import 'package:doctor_appointment/screens/viewappointments.dart';
 import 'package:flutter/material.dart';
 import 'screens/signup.dart';
@@ -28,34 +29,33 @@ Future<void> main() async {
 
   runApp(MyApp());
 }
-class MyApp extends StatelessWidget {
 
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: 'Doctor Appointment',
-    theme: ThemeData(fontFamily: 'Tahoma'),
-     initialRoute: '/',
-         routes: {
-       '/': (context) => firstscreen(),
-       '/signup': (context) => SignupPage(),
-       '/login': (context) => LoginPage(),
-       '/home': (context) => HomePage(),
-       '/details': (context) => DoctorDetailPage(),
-       '/editprofile': (context) => EditProfileUI(),
-       '/doctorreserve': (context) => Booking(),
-       '/rate': (context) => RatingsPage(),
-       '/notify': (context) => Notifications(),
-       '/viewappoint': (context) => ViewAppointment(),
-       '/appoiment': (context) => Appoiments(),
-       '/drprofile': (context) => Drprofile(),
-        '/aboutus': (context) => AboutUs(),
-       '/settings': (context) => SettingsPage(),
-         }));
-}
-
-  
+        debugShowCheckedModeBanner: false,
+        title: 'Doctor Appointment',
+        theme: ThemeData(fontFamily: 'Tahoma'),
+        initialRoute: '/',
+        routes: {
+          //'/': (context) => googlemap(),
+          //  '/': (context) => firstscreen(),
+          //  '/signup': (context) => SignupPage(),
+          '/': (context) => LoginPage(),
+          //  '/home': (context) => HomePage(),
+          //  '/details': (context) => DoctorDetailPage(),
+          //  '/editprofile': (context) => EditProfileUI(),
+          //  '/doctorreserve': (context) => Booking(),
+          //  '/rate': (context) => RatingsPage(),
+          //  '/notify': (context) => Notifications(),
+          //  '/viewappoint': (context) => ViewAppointment(),
+          //  '/appoiment': (context) => Appoiments(),
+          //  '/drprofile': (context) => Drprofile(),
+          //   '/aboutus': (context) => AboutUs(),
+          //  '/settings': (context) => SettingsPage(),
+        }));
+  }
 
 // class MyApp extends StatelessWidget {
 //   final _fbApp =Firebase.initializeApp();
