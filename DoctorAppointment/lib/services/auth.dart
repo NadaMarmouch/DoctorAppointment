@@ -3,7 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class AuthenticationService{
+class AuthenticationService extends ChangeNotifier{
   final FirebaseAuth _firebaseAuth;
 
   AuthenticationService(this._firebaseAuth);
@@ -36,10 +36,10 @@ class AuthenticationService{
       return "signed in";
     }
      on FirebaseAuthException catch(e){
-      if(e.code=='weak password'){
+     
         print(e.message);
         return e.message;
-      }}
+      }
   }
    Future<void> signout() async{
       await _firebaseAuth.signOut();

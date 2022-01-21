@@ -17,28 +17,28 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   var password,email;
- //  final TextEditingController emailController = TextEditingController();
-   //final TextEditingController passwordController = TextEditingController();
-  
-  signin() async{
-    var formdata = _formKey.currentState;
-    if(formdata!.validate()){
-      print('validation');
-      formdata.save();
-      try{
-        UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: 'nada', password: '1234567');
-       return userCredential;
-      }on FirebaseException catch(e){
-        if(e.code=='user not found'){
-        print('No User found');
-        }else if(e.code=='wrong password'){
-          print('re enter the password');
-        }
-      }catch(e){
-        print(e);
-      }
-    }
-  }
+   final TextEditingController emailController = TextEditingController();
+   final TextEditingController passwordController = TextEditingController();
+  FirebaseAuth _auth=FirebaseAuth.instance;
+  // signin() async{
+  //   var formdata = _formKey.currentState;
+  //   if(formdata!.validate()){
+  //     print('validation');
+  //     formdata.save();
+  //     try{
+  //       UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: 'nada', password: '1234567');
+  //      return userCredential;
+  //     }on FirebaseException catch(e){
+  //       if(e.code=='user not found'){
+  //       print('No User found');
+  //       }else if(e.code=='wrong password'){
+  //         print('re enter the password');
+  //       }
+  //     }catch(e){
+  //       print(e);
+  //     }
+  //   }
+  // }
   @override
   void initState() {
     super.initState();
@@ -133,6 +133,7 @@ class _LoginPageState extends State<LoginPage> {
                           BoxShadow(color: Colors.black12, blurRadius: 5)
                         ]),
                     child: TextFormField(
+                      controller: emailController,
                       validator: (value){
                         if(value!.isEmpty){
                           return 'Please enter your username';
@@ -162,6 +163,8 @@ class _LoginPageState extends State<LoginPage> {
                           BoxShadow(color: Colors.black12, blurRadius: 5)
                         ]),
                     child: TextFormField(
+                      controller: passwordController,
+
                       validator: (value){
                         if(value!.length<7){
                           return 'Please enter Your Password';
@@ -212,13 +215,18 @@ class _LoginPageState extends State<LoginPage> {
                                   TextButton.styleFrom(primary: Colors.white),
                               // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                               onPressed: () async{
-                               var user= await signin();
-                               //print(user.toString());
-                               if(user !=null){
-                               Navigator.pushNamed(context, '/home');
-                               }else{
-                                 print('sign in is failed');
-                               }
+                            
+                                context.read<AuthenticationService>().signin(
+                                  email: emailController.text.trim(),
+                                  password: passwordController.text.trim(), );
+                                  Navigator.pushNamed(context, '/home');
+                              //  var user= await signin();
+                              //  //print(user.toString());
+                              //  if(user !=null){
+                              //  Navigator.pushNamed(context, '/home');
+                              //  }else{
+                              //    print('sign in is failed');
+                              //  }
                                 
                               }))
                     ),
@@ -247,4 +255,18 @@ class _LoginPageState extends State<LoginPage> {
       ),
         ])));
   }
+    void _signInWithEmailAndPassword()async{
+      try {
+        final User? user= (await _auth.signInWithEmailAndPassword(email: emailController.text, password:passwordController.text)).user;
+        if(!user!.emailVerified){
+          await user.sendEmailVerification();
+        }
+        Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
+
+      }
+      catch(e){
+        print(e);
+      }
+    }
+
 }

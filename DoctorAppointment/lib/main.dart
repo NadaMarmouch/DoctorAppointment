@@ -23,8 +23,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'services/auth.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  //WidgetsFlutterBinding.ensureInitialized();
+  //await Firebase.initializeApp();
 
   runApp(MyApp());
 }
@@ -38,20 +38,20 @@ class MyApp extends StatelessWidget {
     theme: ThemeData(fontFamily: 'Tahoma'),
      initialRoute: '/',
          routes: {
-       '/': (context) => firstscreen(),
-       '/signup': (context) => SignupPage(),
-       '/login': (context) => LoginPage(),
-       '/home': (context) => HomePage(),
-       '/details': (context) => DoctorDetailPage(),
-       '/editprofile': (context) => EditProfileUI(),
-       '/doctorreserve': (context) => Booking(),
-       '/rate': (context) => RatingsPage(),
-       '/notify': (context) => Notifications(),
-       '/viewappoint': (context) => ViewAppointment(),
+      //  '/': (context) => firstscreen(),
+      //  '/signup': (context) => SignupPage(),
+      //  '/login': (context) => LoginPage(),
+      //  '/home': (context) => HomePage(),
+      //  '/details': (context) => DoctorDetailPage(),
+      //  '/editprofile': (context) => EditProfileUI(),
+      //  '/doctorreserve': (context) => Booking(),
+      //  '/rate': (context) => RatingsPage(),
+      //  '/notify': (context) => Notifications(),
+      //  '/viewappoint': (context) => ViewAppointment(),
        '/appoiment': (context) => Appoiments(),
-       '/drprofile': (context) => Drprofile(),
-        '/aboutus': (context) => AboutUs(),
-       '/settings': (context) => SettingsPage(),
+      //  '/drprofile': (context) => Drprofile(),
+      //   '/aboutus': (context) => AboutUs(),
+      //  '/settings': (context) => SettingsPage(),
          }));
 }
 
