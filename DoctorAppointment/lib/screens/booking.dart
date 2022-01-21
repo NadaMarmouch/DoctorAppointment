@@ -5,6 +5,9 @@ import 'package:doctor_appointment/widget/doctor_timing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:doctor_appointment/widget/appbar.dart';
+import 'package:doctor_appointment/provider/Appoiment_provider.dart';
+import 'package:doctor_appointment/model/appoiment.dart';
+import 'package:provider/provider.dart';
 
 class Booking extends StatefulWidget {
   @override
@@ -18,6 +21,8 @@ class _Bookingpage extends State<Booking> {
   List select3 = [true, false, false, false];
 
   Widget build(BuildContext context) {
+    //List<appoiment> x = context.watch<AppoimentProvider>().appoimentlist;
+    appoiment x;
     return initWidget(context);
   }
 

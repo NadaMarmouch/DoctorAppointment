@@ -6,8 +6,6 @@ import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
-  
-   
   @override
   State<StatefulWidget> createState() {
     return _LoginPageState();
@@ -16,29 +14,9 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
-  var password,email;
-   final TextEditingController emailController = TextEditingController();
-   final TextEditingController passwordController = TextEditingController();
-  FirebaseAuth _auth=FirebaseAuth.instance;
-  // signin() async{
-  //   var formdata = _formKey.currentState;
-  //   if(formdata!.validate()){
-  //     print('validation');
-  //     formdata.save();
-  //     try{
-  //       UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: 'nada', password: '1234567');
-  //      return userCredential;
-  //     }on FirebaseException catch(e){
-  //       if(e.code=='user not found'){
-  //       print('No User found');
-  //       }else if(e.code=='wrong password'){
-  //         print('re enter the password');
-  //       }
-  //     }catch(e){
-  //       print(e);
-  //     }
-  //   }
-  // }
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   @override
   void initState() {
     super.initState();
@@ -46,12 +24,10 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return  Form
-    (
-      key: _formKey,
-      child:Scaffold(
-        body: Stack(
-        children: <Widget>[
+    return Form(
+        key: _formKey,
+        child: Scaffold(
+            body: Stack(children: <Widget>[
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -75,198 +51,179 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
-       Container(
-        child: ListView(
-          children: <Widget>[
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height / 3.5,
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [Colors.white, Colors.white],
-                  ),
-                  borderRadius:
-                      BorderRadius.only(bottomLeft: Radius.circular(90))),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Spacer(),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Icon(
-                      Icons.person,
-                      size: 90,
-                      color: Colors.blue,
-                    ),
-                  ),
-                  Spacer(),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: 32, right: 32),
-                      child: Text(
-                        'Login',
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+          Container(
+            child: ListView(
+              children: <Widget>[
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 3.5,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [Colors.white, Colors.white],
                       ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height / 2,
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.only(top: 62),
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    height: 45,
-                    padding:
-                        EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(color: Colors.black12, blurRadius: 5)
-                        ]),
-                    child: TextFormField(
-                      controller: emailController,
-                      validator: (value){
-                        if(value!.isEmpty){
-                          return 'Please enter your username';
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        icon: Icon(
+                      borderRadius:
+                          BorderRadius.only(bottomLeft: Radius.circular(90))),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Spacer(),
+                      Align(
+                        alignment: Alignment.center,
+                        child: Icon(
                           Icons.person,
-                          color: Color(0xff6bceff),
+                          size: 90,
+                          color: Colors.blue,
                         ),
-                        hintText: 'Username',
                       ),
-                    ),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    height: 45,
-                    margin: EdgeInsets.only(top: 32),
-                    padding:
-                        EdgeInsets.only(top: 4, left: 16, right: 16, bottom: 4),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(color: Colors.black12, blurRadius: 5)
-                        ]),
-                    child: TextFormField(
-                      controller: passwordController,
-
-                      validator: (value){
-                        if(value!.length<7){
-                          return 'Please enter Your Password';
-                        }
-                        return null;
-                      },
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        icon: Icon(
-                          Icons.vpn_key,
-                          color: Color(0xff6bceff),
-                        ),
-                        hintText: 'Password',
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 16, right: 32),
-                      child: Text(
-                        'Forgot Password ?',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ),
-                  ),
-                  Spacer(),
-                  GestureDetector(
-                      onTap: (){
-                        Navigator.pushNamed(context, '/signup');
-                      },
-                      child: Container(
-                      height: 45,
-                      width: MediaQuery.of(context).size.width / 1.2,
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Color(0xff6bceff),
-                              Color(0xFF00abff),
-                            ],
+                      Spacer(),
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 32, right: 32),
+                          child: Text(
+                            'Login',
+                            style: TextStyle(color: Colors.white, fontSize: 18),
                           ),
-                          borderRadius: BorderRadius.all(Radius.circular(50))),
-                      child: Center(
-                          child: TextButton(
-                              child: Text('LOGIN'),
-                              style:
-                                  TextButton.styleFrom(primary: Colors.white),
-                              // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                              onPressed: () async{
-                            
-                                context.read<AuthenticationService>().signin(
-                                  email: emailController.text.trim(),
-                                  password: passwordController.text.trim(), );
-                                  Navigator.pushNamed(context, '/home');
-                              //  var user= await signin();
-                              //  //print(user.toString());
-                              //  if(user !=null){
-                              //  Navigator.pushNamed(context, '/home');
-                              //  }else{
-                              //    print('sign in is failed');
-                              //  }
-                                
-                              }))
-                    ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                Container(
+                  height: MediaQuery.of(context).size.height / 2,
+                  width: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.only(top: 62),
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        width: MediaQuery.of(context).size.width / 1.2,
+                        height: 45,
+                        padding: EdgeInsets.only(
+                            top: 4, left: 16, right: 16, bottom: 4),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(50)),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(color: Colors.black12, blurRadius: 5)
+                            ]),
+                        child: TextFormField(
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Please enter your username';
+                            }
+                            return null;
+                          },
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            icon: Icon(
+                              Icons.person,
+                              color: Color(0xff6bceff),
+                            ),
+                            hintText: 'Username',
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width / 1.2,
+                        height: 45,
+                        margin: EdgeInsets.only(top: 32),
+                        padding: EdgeInsets.only(
+                            top: 4, left: 16, right: 16, bottom: 4),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(50)),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(color: Colors.black12, blurRadius: 5)
+                            ]),
+                        child: TextFormField(
+                          validator: (value) {
+                            if (value!.length < 7) {
+                              return 'Please enter Your Password';
+                            }
+                            return null;
+                          },
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            icon: Icon(
+                              Icons.vpn_key,
+                              color: Color(0xff6bceff),
+                            ),
+                            hintText: 'Password',
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 16, right: 32),
+                          child: Text(
+                            'Forgot Password ?',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ),
+                      ),
+                      Spacer(),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/signup');
+                        },
+                        child: Container(
+                            height: 45,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Color(0xff6bceff),
+                                    Color(0xFF00abff),
+                                  ],
+                                ),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(50))),
+                            child: Center(
+                                child: TextButton(
+                                    child: Text('LOGIN'),
+                                    style: TextButton.styleFrom(
+                                        primary: Colors.white),
+                                    // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                                    onPressed: () {
+                                      context
+                                          .read<AuthenticationService>()
+                                          .signin(
+                                            email: emailController.text.trim(),
+                                            password:
+                                                passwordController.text.trim(),
+                                          );
+                                      Navigator.pushNamed(context, '/home.');
+                                    }))),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                GestureDetector(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text("Don't have an account ?"),
+                      Text(
+                        "Sign Up",
+                        style: TextStyle(color: Color(0xff6bceff)),
+                      ),
+                    ],
+                  ),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.pushNamed(context, '/signup');
+                  },
+                ),
+              ],
             ),
-            SizedBox(
-              height: 50,
-            ),
-            GestureDetector(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text("Don't have an account ?"),
-                  Text("Sign Up",style: TextStyle(color: Color(0xff6bceff)),),
-                ], 
-              ),
-              onTap: () {
-                Navigator.pop(context);
-               Navigator.pushNamed(context,'/signup' );
-              },
-            ),
-          ],
-        ),
-      ),
+          ),
         ])));
   }
-    void _signInWithEmailAndPassword()async{
-      try {
-        final User? user= (await _auth.signInWithEmailAndPassword(email: emailController.text, password:passwordController.text)).user;
-        if(!user!.emailVerified){
-          await user.sendEmailVerification();
-        }
-        Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
-
-      }
-      catch(e){
-        print(e);
-      }
-    }
-
 }

@@ -1,7 +1,10 @@
-class appoiment{
+class appoiment {
   String DrName;
   String time;
   String date;
   String DrType;
-  appoiment(this.DrName, this.DrType, this.date, this.time);
+  String pp;
+  String status;
+  appoiment(
+      this.DrName, this.DrType, this.status, this.pp, this.date, this.time);
 }

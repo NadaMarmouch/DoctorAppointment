@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:doctor_appointment/widget/Appoiments_item.dart';
+import 'package:doctor_appointment/provider/Appoiment_provider.dart';
+import 'package:doctor_appointment/model/appoiment.dart';
+import 'package:provider/provider.dart';
 
 class Appoiments extends StatefulWidget {
   @override
@@ -9,11 +12,18 @@ class Appoiments extends StatefulWidget {
 class AppoimentsState extends State<Appoiments> {
   @override
   Widget build(BuildContext context) {
-    return initScreen();
-  }
+    //   return initScreen();
+    // }
 
-  Widget initScreen() {
-    Size size = MediaQuery.of(context).size;
+    // Widget initScreen() {
+    //   Size size = MediaQuery.of(context).size;
+    //
+    List<appoiment> x = context.watch<AppoimentProvider>().appoimentlist;
+    final children = <Widget>[];
+    for (var i = 0; i < x.length; i++) {
+      children.add(MyActivity(x[i].pp, x[i].DrName, x[i].DrType, x[i].status,
+          "", x[i].time, x[i].date));
+    }
     return Scaffold(
       backgroundColor: Color(0xFF00abff),
       drawer: Drawer(
@@ -29,7 +39,7 @@ class AppoimentsState extends State<Appoiments> {
             ListTile(
               title: const Text('Home page'),
               onTap: () {
-                Navigator.pushNamed(context,'/home');
+                Navigator.pushNamed(context, '/home');
               },
             ),
             ListTile(
@@ -41,7 +51,7 @@ class AppoimentsState extends State<Appoiments> {
             ListTile(
               title: const Text('My Appointment'),
               onTap: () {
-                Navigator.pushNamed(context,'/appoiment');
+                Navigator.pushNamed(context, '/appoiment');
               },
             ),
             ListTile(
@@ -98,42 +108,7 @@ class AppoimentsState extends State<Appoiments> {
             Expanded(
               child: Container(
                 margin: EdgeInsets.only(left: 20, right: 20),
-                child: ListView(
-                  children: [
-                    MyActivity(
-                        "assets/doc.PNG",
-                        "Dr. Fred Mask",
-                        "Heart surgen",
-                        "Completed",
-                        "",
-                        "8AM",
-                        "21 Jan Tuesday"),
-                    MyActivity(
-                        "assets/doc.PNG",
-                        "Dr. Stella Kane",
-                        "Bone Specialist",
-                        "Canceled",
-                        "",
-                        "8AM",
-                        "21 Jan Tuesday"),
-                    MyActivity(
-                        "assets/doc.PNG",
-                        "Dr. Zac Wolff",
-                        "Eyes Specialist",
-                        "Pending",
-                        "",
-                        "8AM",
-                        "21 Jan Tuesday"),
-                    MyActivity(
-                        "assets/doc.PNG",
-                        "Dr. Fred Mask",
-                        "Heart surgen",
-                        "Canceled",
-                        "",
-                        "8AM",
-                        "21 Jan Tuesday"),
-                  ],
-                ),
+                child: ListView(children: children),
               ),
             )
           ],
