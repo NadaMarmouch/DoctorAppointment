@@ -1,6 +1,6 @@
 import 'package:doctor_appointment/screens/Appoiments.dart';
 import 'package:doctor_appointment/screens/editprofile.dart';
-//import 'package:doctor_appointment/screens/google_map.dart';
+import 'package:doctor_appointment/screens/google_map.dart';
 import 'package:doctor_appointment/screens/viewappointments.dart';
 import 'package:flutter/material.dart';
 import 'screens/signup.dart';
@@ -40,20 +40,20 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           //'/': (context) => googlemap(),
-          //  '/': (context) => firstscreen(),
-          //  '/signup': (context) => SignupPage(),
-          //'/': (context) => LoginPage(),
-          //  '/home': (context) => HomePage(),
-          //  '/details': (context) => DoctorDetailPage(),
-          //  '/editprofile': (context) => EditProfileUI(),
-          //  '/doctorreserve': (context) => Booking(),
-          //  '/rate': (context) => RatingsPage(),
-            '/': (context) => Notifications(),
-          //  '/viewappoint': (context) => ViewAppointment(),
-            //'/': (context) => Appoiments(),
-          //  '/drprofile': (context) => Drprofile(),
-          //  '/aboutus': (context) => AboutUs(),
-          //  '/settings': (context) => SettingsPage(),
+            '/': (context) => firstscreen(),
+            '/signup': (context) => SignupPage(),
+            '/login': (context) => LoginPage(),
+            '/home': (context) => HomePage(),
+            '/details': (context) => DoctorDetailPage(),
+            '/editprofile': (context) => EditProfileUI(),
+            '/doctorreserve': (context) => Booking(),
+            '/rate': (context) => RatingsPage(),
+            '/notify': (context) => Notifications(),
+            '/viewappoint': (context) => ViewAppointment(),
+          //  '/': (context) => Appoiments(),
+            '/drprofile': (context) => Drprofile(),
+            '/aboutus': (context) => AboutUs(),
+            '/settings': (context) => SettingsPage(),
         }));
   }
 
