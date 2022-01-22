@@ -1,4 +1,4 @@
-import 'package:doctor_appointment/screens/Appoiments.dart';
+import 'package:doctor_appointment/screens/appointments.dart';
 import 'package:doctor_appointment/screens/editprofile.dart';
 //import 'package:doctor_appointment/screens/google_map.dart';
 import 'package:doctor_appointment/screens/viewappointments.dart';
@@ -12,7 +12,7 @@ import 'screens/profile.dart';
 import 'screens/first_screen.dart';
 import 'screens/booking.dart';
 import 'screens/notifications.dart';
-import 'screens/Appoiments.dart';
+import 'screens/appointments.dart';
 import 'package:doctor_appointment/screens/ratingpage.dart';
 import 'screens/drprofile.dart';
 import 'screens/aboutus.dart';
