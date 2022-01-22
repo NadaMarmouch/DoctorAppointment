@@ -1,7 +1,7 @@
 import 'package:doctor_appointment/widget/category.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:doctor_appointment/model/appoiment.dart';
+import 'package:doctor_appointment/model/appointment.dart';
 
 class User{
   String name;
