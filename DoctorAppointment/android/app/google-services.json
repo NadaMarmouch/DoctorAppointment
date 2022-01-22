@@ -1,62 +1,33 @@
 {
   "project_info": {
-    "project_number": "1002124065169",
-    "project_id": "doctor-appointment-708a8",
-    "storage_bucket": "doctor-appointment-708a8.appspot.com"
+    "project_number": "608443356111",
+    "project_id": "doctor-appointment-338911",
+    "storage_bucket": "doctor-appointment-338911.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1002124065169:android:c4c68b9cc05a1496858230",
-        "android_client_info": {
-          "package_name": "com.example.flutter_application_1"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1002124065169-dmulqv4jum7ksg1rg9bh8jgvltred9me.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB4gSvEVaMf2en_uPZ2-dDP5N_yc8jW2iI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1002124065169-dmulqv4jum7ksg1rg9bh8jgvltred9me.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1002124065169:android:f543790fa937e595858230",
+        "mobilesdk_app_id": "1:608443356111:android:0b0f6183d6da1c0c8db8ba",
         "android_client_info": {
           "package_name": "eg.edu.miuegypt.csc422.doctorappointment"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1002124065169-dmulqv4jum7ksg1rg9bh8jgvltred9me.apps.googleusercontent.com",
+          "client_id": "608443356111-j917cni54h0uioqikofchbri9h0q96d4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB4gSvEVaMf2en_uPZ2-dDP5N_yc8jW2iI"
+          "current_key": "AIzaSyBX1Jy9sQCO6W7DjPrtFEaVaHBcKfgenW8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1002124065169-dmulqv4jum7ksg1rg9bh8jgvltred9me.apps.googleusercontent.com",
+              "client_id": "608443356111-j917cni54h0uioqikofchbri9h0q96d4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

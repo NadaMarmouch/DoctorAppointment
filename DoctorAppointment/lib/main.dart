@@ -1,3 +1,4 @@
+import 'package:doctor_appointment/provider/signin_provider.dart';
 import 'package:doctor_appointment/screens/Appoiments.dart';
 import 'package:doctor_appointment/screens/editprofile.dart';
 //import 'package:doctor_appointment/screens/google_map.dart';
@@ -22,39 +23,47 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'services/auth.dart';
+import 'package:doctor_appointment/provider/signup_provider.dart ';
 
 Future<void> main() async {
-  //WidgetsFlutterBinding.ensureInitialized();
-  //await Firebase.initializeApp();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
 
-  runApp(MyApp());
+  runApp(
+    MultiProvider(providers: [
+      ChangeNotifierProvider(create: (context) => LoginValidator()),
+      ChangeNotifierProvider(create: (context) => SignUpValidator()),
+      ]
+    ,child:MyApp()));
+    
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return (MaterialApp(
+    
+    return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Doctor Appointment',
         theme: ThemeData(fontFamily: 'Tahoma'),
         initialRoute: '/',
         routes: {
-          //'/': (context) => googlemap(),
-          //  '/': (context) => firstscreen(),
-          //  '/signup': (context) => SignupPage(),
-          '/': (context) => LoginPage(),
-          //  '/home': (context) => HomePage(),
+         
+            '/': (context) => firstscreen(),
+            '/signup': (context) => SignupPage(),
+           '/login': (context) => LoginPage(),
+           '/home': (context) => HomePage(),
           //  '/details': (context) => DoctorDetailPage(),
           //  '/editprofile': (context) => EditProfileUI(),
           //  '/doctorreserve': (context) => Booking(),
           //  '/rate': (context) => RatingsPage(),
           //  '/notify': (context) => Notifications(),
           //  '/viewappoint': (context) => ViewAppointment(),
-         //   '/': (context) => Appoiments(),
+          //  '/appointment': (context) => Appoiments(),
           //  '/drprofile': (context) => Drprofile(),
           //   '/aboutus': (context) => AboutUs(),
           //  '/settings': (context) => SettingsPage(),
-        }));
+        });
   }
 
 // class MyApp extends StatelessWidget {

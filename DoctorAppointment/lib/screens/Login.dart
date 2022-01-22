@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:doctor_appointment/theme/theme.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:doctor_appointment/provider/signin_provider.dart';
 
 class LoginPage extends StatefulWidget {
   
@@ -113,21 +114,17 @@ class _LoginPageState extends State<LoginPage> {
                           BoxShadow(color: Colors.black12, blurRadius: 5)
                         ]),
                     child: TextFormField(
-                      validator: (value){
-                        if(value!.isEmpty){
-                          return 'Please enter your username';
-                        }
-                        return null;
-                      },
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         icon: Icon(
                           Icons.person,
                           color: Color(0xff6bceff),
                         ),
-                        hintText: 'Username',
+                        hintText: 'Username',   
                       ),
-                    ),
+                      onChanged: (String value) {
+                    Provider.of<LoginValidator>(context,listen:false).changeUserName(value);
+                        }  ),
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width / 1.2,
@@ -157,7 +154,9 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         hintText: 'Password',
                       ),
-                    ),
+                       onChanged: (String value) {
+                      Provider.of<LoginValidator>(context,listen:false).changepassword(value);
+                        } ),
                   ),
                   Align(
                     alignment: Alignment.centerRight,
@@ -192,10 +191,10 @@ class _LoginPageState extends State<LoginPage> {
                                   TextButton.styleFrom(primary: Colors.white),
                               // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                               onPressed: () {
-                                context.read<AuthenticationService>().signin(
-                                email: emailController.text.trim(),
-                                password: passwordController.text.trim(), );
-                                Navigator.pushNamed(context, '/home.');
+                                 Navigator.pushNamed(context, '/home');
+                                // context.read<AuthenticationService>().signin(
+                                // email: emailController.text.trim(),
+                                // password: passwordController.text.trim(), );
                               }))
                     ),
                   ),
