@@ -1,7 +1,7 @@
 import 'package:doctor_appointment/provider/signin_provider.dart';
 import 'package:doctor_appointment/screens/Appoiments.dart';
 import 'package:doctor_appointment/screens/editprofile.dart';
-//import 'package:doctor_appointment/screens/google_map.dart';
+import 'package:doctor_appointment/screens/google_map.dart';
 import 'package:doctor_appointment/screens/viewappointments.dart';
 import 'package:flutter/material.dart';
 import 'screens/signup.dart';
