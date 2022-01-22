@@ -1,13 +1,13 @@
-import 'package:doctor_appointment/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:doctor_appointment/theme/theme.dart';
-import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:provider/provider.dart';
+import 'package:doctor_appointment/services/auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 class LoginPage extends StatefulWidget {
-  
-   
   @override
   State<StatefulWidget> createState() {
     return _LoginPageState();
@@ -16,8 +16,10 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
-   final TextEditingController emailController = TextEditingController();
-   final TextEditingController passwordController = TextEditingController();
+  FirebaseAuth _auth = FirebaseAuth.instance;
+  final TextEditingController _emailController = TextEditingController();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final TextEditingController _passwordController = TextEditingController();
   
   @override
   void initState() {
@@ -113,6 +115,7 @@ class _LoginPageState extends State<LoginPage> {
                           BoxShadow(color: Colors.black12, blurRadius: 5)
                         ]),
                     child: TextFormField(
+                      controller: _emailController,
                       validator: (value){
                         if(value!.isEmpty){
                           return 'Please enter your username';
@@ -142,8 +145,9 @@ class _LoginPageState extends State<LoginPage> {
                           BoxShadow(color: Colors.black12, blurRadius: 5)
                         ]),
                     child: TextFormField(
+                      controller: _passwordController,
                       validator: (value){
-                        if(value!.length<7){
+                        if(value!.isEmpty){
                           return 'Please enter Your Password';
                         }
                         return null;
@@ -170,7 +174,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   Spacer(),
-                  GestureDetector(
+                  InkWell(
                       onTap: (){
                         Navigator.pushNamed(context, '/signup');
                       },
@@ -191,21 +195,30 @@ class _LoginPageState extends State<LoginPage> {
                               style:
                                   TextButton.styleFrom(primary: Colors.white),
                               // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                              onPressed: () {
-                                context.read<AuthenticationService>().signin(
-                                email: emailController.text.trim(),
-                                password: passwordController.text.trim(), );
-                                Navigator.pushNamed(context, '/home.');
-                              }))
-                    ),
+                             onPressed: () async {
+                                if (_formKey.currentState!.validate()) {
+                                  if(_emailController.text == "doctor" && _passwordController.text == "doctor"){
+                                          Navigator.pushNamed(context, '/homedoctor');
+                                  }
+                                  else{
+                                    Navigator.pushNamed(context, '/home');
+                                  }
+                                // context.read<AuthenticationService>().signin(
+                                // email: _emailController.text.trim(),
+                                // password: _passwordController.text.trim(), );
+                                
+                                }
+                                  
+                            
+                              } ),
                   ),
-                ],
+                  )) ],
               ),
             ),
             SizedBox(
               height: 50,
             ),
-            GestureDetector(
+            InkWell(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

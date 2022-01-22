@@ -1,11 +1,14 @@
 import 'package:provider/provider.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:doctor_appointment/model/validation.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 
 class LoginValidator extends ChangeNotifier {
+ final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  //LoginValidator(this._firebaseAuth);
 
   ValidationItem _username = ValidationItem('',"");
   ValidationItem _password = ValidationItem('','');
@@ -51,4 +54,15 @@ class LoginValidator extends ChangeNotifier {
   }
 
 
+Future<String?> signin({required String email, required String password}) async{
+    try{
+      await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
+      return "signed in";
+    }
+     on FirebaseAuthException catch(e){
+     
+        print(e.message);
+        return e.message;
+      }
+  }
 }

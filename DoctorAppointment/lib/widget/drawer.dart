@@ -41,15 +41,10 @@ class Drawers extends StatelessWidget {
           ListTile(
             title: const Text('My Appointment'),
             onTap: () {
-              Navigator.pop(context);
+                Navigator.pushNamed(context, '/appoiment');
             },
           ),
-           ListTile(
-            title: const Text('Dr profile'),
-            onTap: () {
-              Navigator.pushNamed(context, '/drprofile');
-            },
-          ),
+           
            ListTile(
             title: const Text('Google Map'),
             onTap: () {
@@ -62,12 +57,7 @@ class Drawers extends StatelessWidget {
               Navigator.pushNamed(context, '/rate');
             },
           ),
-          ListTile(
-            title: const Text('View Appointments'),
-            onTap: () {
-              Navigator.pushNamed(context, '/viewappoint');
-            },
-          ),
+         
           ListTile(
             title: const Text('Logout'),
             onTap: () {

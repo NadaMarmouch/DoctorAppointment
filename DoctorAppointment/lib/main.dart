@@ -23,15 +23,17 @@ import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'services/auth.dart';
 import 'package:doctor_appointment/provider/signin_provider.dart';
-//import 'package:doctor_appointment/provider/signup_provider.dart';
-
+import 'package:doctor_appointment/provider/signup_provider.dart';
+import 'screens/homedoctor.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 runApp(
    MultiProvider(
    providers: [
-   ChangeNotifierProvider(create: (context) => LoginValidator()), ],
+   ChangeNotifierProvider(create: (context) => LoginValidator()),
+   //ChangeNotifierProvider(create: (context) => SignUpValidator()),
+    ],
 
 child: MyApp()
  ));
@@ -46,21 +48,23 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(fontFamily: 'Tahoma'),
         initialRoute: '/',
         routes: {
-            '/': (context) => firstscreen(),
-            // '/signup': (context) => SignupPage(),
+           // '/': (context) => Doctorhome(),
+             '/': (context) => firstscreen(),
+             '/signup': (context) => SignupPage(),
              '/login': (context) => LoginPage(),
-            // '/home': (context) => HomePage(),
-            // '/details': (context) => DoctorDetailPage(),
-            // '/editprofile': (context) => EditProfileUI(),
-            // '/doctorreserve': (context) => Booking(),
-            // '/rate': (context) => RatingsPage(),
-            // '/notify': (context) => Notifications(),
-            // '/viewappoint': (context) => ViewAppointment(),
-            // '/appointment': (context) => Appoiments(),
-            // '/drprofile': (context) => Drprofile(),
-            // '/aboutus': (context) => AboutUs(),
-            // '/settings': (context) => SettingsPage(),
-            //'/': (context) => googlemap(),
+              '/home': (context) => HomePage(),
+            '/homedoctor': (context) => Doctorhome(),
+            '/details': (context) => DoctorDetailPage(),
+            '/editprofile': (context) => EditProfileUI(),
+            '/doctorreserve': (context) => Booking(),
+            '/rate': (context) => RatingsPage(),
+            '/notify': (context) => Notifications(),
+            '/viewappoint': (context) => ViewAppointment(),
+            '/appoiment': (context) => Appoiments(),
+            '/drprofile': (context) => Drprofile(),
+            '/aboutus': (context) => AboutUs(),
+            '/settings': (context) => SettingsPage(),
+           /// '/': (context) => googlemap(),
         }));
   }
 
