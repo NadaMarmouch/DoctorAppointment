@@ -4,14 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthenticationService extends ChangeNotifier{
-  final FirebaseAuth _firebaseAuth;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  AuthenticationService(this._firebaseAuth);
-  Stream<User?> get authStateChanges => _firebaseAuth.idTokenChanges();
+  AuthenticationService();
+  Stream<User?> get authStateChanges => _auth.idTokenChanges();
 
-  Future<String?> signup({required String email, required String password}) async{
+  Future signup({required String email, required String password}) async{
     try{
-      await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+      print (email);
+      await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      
       return "signed up";
 
     }
@@ -32,7 +34,7 @@ class AuthenticationService extends ChangeNotifier{
   }
   Future<String?> signin({required String email, required String password}) async{
     try{
-      await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
+      await _auth.signInWithEmailAndPassword(email: email, password: password);
       return "signed in";
     }
      on FirebaseAuthException catch(e){
@@ -42,6 +44,6 @@ class AuthenticationService extends ChangeNotifier{
       }
   }
    Future<void> signout() async{
-      await _firebaseAuth.signOut();
+      await _auth.signOut();
    }
 }
