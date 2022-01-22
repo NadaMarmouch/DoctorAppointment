@@ -195,7 +195,7 @@ class _LoginPageState extends State<LoginPage> {
                                 context.read<AuthenticationService>().signin(
                                 email: emailController.text.trim(),
                                 password: passwordController.text.trim(), );
-                                Navigator.pushNamed(context, '/home.');
+                                Navigator.pushNamed(context, '/home');
                               }))
                     ),
                   ),

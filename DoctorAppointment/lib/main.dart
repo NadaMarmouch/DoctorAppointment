@@ -1,6 +1,6 @@
-import 'package:doctor_appointment/screens/Appoiments.dart';
+import 'package:doctor_appointment/screens/appointments.dart';
 import 'package:doctor_appointment/screens/editprofile.dart';
-import 'package:doctor_appointment/screens/google_map.dart';
+//import 'package:doctor_appointment/screens/google_map.dart';
 import 'package:doctor_appointment/screens/viewappointments.dart';
 import 'package:flutter/material.dart';
 import 'screens/signup.dart';
@@ -12,7 +12,7 @@ import 'screens/profile.dart';
 import 'screens/first_screen.dart';
 import 'screens/booking.dart';
 import 'screens/notifications.dart';
-import 'screens/Appoiments.dart';
+import 'screens/appointments.dart';
 import 'package:doctor_appointment/screens/ratingpage.dart';
 import 'screens/drprofile.dart';
 import 'screens/aboutus.dart';
@@ -24,8 +24,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'services/auth.dart';
 
 Future<void> main() async {
-  //WidgetsFlutterBinding.ensureInitialized();
-  //await Firebase.initializeApp();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
 
   runApp(MyApp());
 }

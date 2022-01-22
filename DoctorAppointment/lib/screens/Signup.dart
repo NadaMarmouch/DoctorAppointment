@@ -13,9 +13,9 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
   var password, email;
-  final _formKey = GlobalKey<FormState>();
+  final _formKey2 = GlobalKey<FormState>();
   //final TextEditingController emailController = TextEditingController();
-//final TextEditingController passwordController = TextEditingController();
+  //final TextEditingController passwordController = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -50,8 +50,10 @@ class _SignupPageState extends State<SignupPage> {
 //   }
   @override
   Widget build(BuildContext context) {
+    TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
     return Form(
-        key: _formKey,
+        key: _formKey2,
         child: Scaffold(
             body: Stack(children: <Widget>[
           Container(
@@ -134,17 +136,17 @@ class _SignupPageState extends State<SignupPage> {
                           boxShadow: [
                             BoxShadow(color: Colors.black12, blurRadius: 5)
                           ]),
-                      key: _formKey,
                       child: TextFormField(
+                        controller: emailController,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Please enter your username';
+                            return 'Please enter your email';
                           }
                           return null;
                         },
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Username',
+                          hintText: 'Email',
                         ),
                       ),
                     ),
@@ -165,13 +167,13 @@ class _SignupPageState extends State<SignupPage> {
                       child: TextFormField(
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Please enter your email';
+                            return 'Please enter your username';
                           }
                           return null;
                         },
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Email',
+                          hintText: 'Username',
                         ),
                       ),
                     ),
@@ -217,6 +219,7 @@ class _SignupPageState extends State<SignupPage> {
                             BoxShadow(color: Colors.black12, blurRadius: 5)
                           ]),
                       child: TextFormField(
+                        controller: passwordController,
                         validator: (value) {
                           if (value!.length > 6) {
                             return 'Please enter your password';
@@ -256,6 +259,8 @@ class _SignupPageState extends State<SignupPage> {
                                     TextButton.styleFrom(primary: Colors.white),
                                 // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                                 onPressed: () async {
+                                  AuthenticationService authsignup = AuthenticationService();
+                                  await authsignup.signup(email: "philip@gmail.com", password: "mopmop123");
                                   //  var user= await signup();
                                   //  if(user !=null){
                                   //  Navigator.pushNamed(context, '/home');

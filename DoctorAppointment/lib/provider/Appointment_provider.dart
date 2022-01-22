@@ -1,7 +1,7 @@
-import 'package:doctor_appointment/screens/Appoiments.dart';
+import 'package:doctor_appointment/screens/appointments.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
-import 'package:doctor_appointment/model/appoiment.dart';
+import 'package:doctor_appointment/model/appointment.dart';
 class AppoimentProvider extends ChangeNotifier {
  appoiment appoiments=appoiment("mohamed","Heart","17/2/2021","20:10");
 

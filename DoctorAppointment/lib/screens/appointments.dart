@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:doctor_appointment/widget/Appoiments_item.dart';
-import 'package:doctor_appointment/provider/Appoiment_provider.dart';
+import 'package:doctor_appointment/provider/Appointment_provider.dart';
 import 'package:provider/provider.dart';
 
 class Appoiments extends StatefulWidget {
