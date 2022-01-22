@@ -20,9 +20,10 @@ class HomePageState extends State<HomePage> {
         backgroundColor: Color(0xFF00abff),
         drawer: Drawers(),
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(50.0),
+        preferredSize: Size.fromHeight(50.0),
           child: TopBar("Doctor Appointment"),
         ),
+        
         body: Container(
             decoration: BoxDecoration(
                 color: Colors.grey[100],
@@ -38,10 +39,10 @@ class HomePageState extends State<HomePage> {
                       margin: EdgeInsets.only(top: 20, left: 20),
                       child: Text(
                         "Hi,......",
+                        
                         style: TextStyle(
                           color: Color(0xff363636),
                           fontSize: 25,
-                          fontFamily: 'Roboto',
                         ),
                       ),
                     ),
@@ -53,7 +54,6 @@ class HomePageState extends State<HomePage> {
                           color: Color(0xff363636),
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
-                          fontFamily: 'Roboto',
                         ),
                       ),
                     ),
@@ -75,6 +75,7 @@ class HomePageState extends State<HomePage> {
                       ),
                       child: Row(
                         children: [
+                         // Flexible bt3mal nfs el hga bt3t el expanded
                           Expanded(
                             flex: 5,
                             child: Container(
@@ -115,7 +116,6 @@ class HomePageState extends State<HomePage> {
                       width: size.width,
                       margin: EdgeInsets.only(top: 20, left: 20),
                       child: Stack(
-                        fit: StackFit.loose,
                         children: [
                           Container(
                             child: Text(

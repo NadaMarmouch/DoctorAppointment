@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "539568831895",
+    "project_id": "doctor-appointment-ab3db",
+    "storage_bucket": "doctor-appointment-ab3db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539568831895:android:b75b4ca4a6c4aaffa998d2",
+        "android_client_info": {
+          "package_name": "eg.edu.miuegypt.csc422.doctorappointment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539568831895-g4p2r0ksubett5nf3sr1ikenej6be2rj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApB-sKaIuxKDvG7iTzPaOmSh9Sc-L7HgM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539568831895-g4p2r0ksubett5nf3sr1ikenej6be2rj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

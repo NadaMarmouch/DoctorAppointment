@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:doctor_appointment/widget/toprated.dart';
 import 'package:doctor_appointment/widget/doctor_name.dart';
 import 'package:provider/provider.dart';
-import 'doctor_profile.dart';
+import 'booking.dart';
 import 'package:doctor_appointment/widget/appbar.dart';
 
 class DoctorDetailPage extends StatefulWidget {
@@ -97,7 +97,7 @@ class _DoctorDetailState extends State<DoctorDetailPage> {
                   height: 10,
                 ),
                 doctor_name("assets/teeth.jpg", "Dr. Nour El Den", "Dentisty",
-                    "200L.E", "  Nasr City, Cairo Governorate", 450),
+                    "200L.E", " Dr. Nour El Den", 450),
                 SizedBox(
                   height: 10,
                 ),
