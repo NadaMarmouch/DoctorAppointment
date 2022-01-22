@@ -49,9 +49,9 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
          
-            '/': (context) => firstscreen(),
-            '/signup': (context) => SignupPage(),
-           '/login': (context) => LoginPage(),
+          //  '/': (context) => firstscreen(),
+            '/': (context) => SignupPage(),
+           //'/': (context) => LoginPage(),
            '/home': (context) => HomePage(),
           //  '/details': (context) => DoctorDetailPage(),
           //  '/editprofile': (context) => EditProfileUI(),

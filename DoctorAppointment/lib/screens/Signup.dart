@@ -4,6 +4,7 @@ import 'package:doctor_appointment/theme/theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:doctor_appointment/services/auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SignupPage extends StatefulWidget {
   @override
@@ -17,6 +18,22 @@ final TextEditingController usernameController = TextEditingController();
 final TextEditingController emailController = TextEditingController();
 final TextEditingController passwordController = TextEditingController();
 final TextEditingController phonenumberController = TextEditingController();
+
+Future<void> addUser(String username,String email,String password, String phonenumber) {
+    // Call the user's CollectionReference to add a new user
+    CollectionReference collection =
+        FirebaseFirestore.instance.collection('users');
+
+    return collection
+        .add({
+          'username': username, // John Doe
+          'emai': email, // John Doe
+          'password':password, // John Doe
+          'phonenumber': phonenumber, // John Doe
+        })
+        .then((value) => print("Recorded"))
+        .catchError((error) => print("Failed to add record: $error"));
+  }
 
   @override
   void initState() {
@@ -235,15 +252,20 @@ final TextEditingController phonenumberController = TextEditingController();
                                   TextButton.styleFrom(primary: Colors.white),
                               // style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                               onPressed: () {
-                                if(_formKey.currentState!.validate()){
-                                  ScaffoldMessenger.of(context) .showSnackBar(
-                                  SnackBar(content: Text('Processing Data')));
-                                Navigator.pushNamed(context, '/home');
 
-                                context.read<AuthenticationService>().signup(
-                                email: emailController.text.trim(),
-                                password: passwordController.text.trim(), );
+                                if(_formKey.currentState!.validate()){
+                                  addUser(usernameController.text, emailController.text, passwordController.text, phonenumberController.text);
                                 }
+
+                                // if(_formKey.currentState!.validate()){
+                                //   ScaffoldMessenger.of(context) .showSnackBar(
+                                //   SnackBar(content: Text('Processing Data')));
+                                // Navigator.pushNamed(context, '/home');
+
+                                // context.read<AuthenticationService>().signup(
+                                // email: emailController.text.trim(),
+                                // password: passwordController.text.trim(), );
+                                //}
 
 
                                 
