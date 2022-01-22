@@ -5,8 +5,8 @@ import 'package:doctor_appointment/widget/doctor_timing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:doctor_appointment/widget/appbar.dart';
-import 'package:doctor_appointment/provider/Appoiment_provider.dart';
-import 'package:doctor_appointment/model/appoiment.dart';
+import 'package:doctor_appointment/provider/Appointment_provider.dart';
+import 'package:doctor_appointment/model/appointment.dart';
 import 'package:provider/provider.dart';
 
 class Booking extends StatefulWidget {

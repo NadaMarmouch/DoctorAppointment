@@ -5,12 +5,12 @@ class MyActivity extends StatelessWidget {
   String img;
   String speciality;
   String rating;
-  String distance;
+
   String time;
   String date;
 
-  MyActivity(this.img, this.name, this.speciality, this.rating, this.distance,
-      this.time, this.date);
+  MyActivity(
+      this.img, this.name, this.speciality, this.rating, this.time, this.date);
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return GestureDetector(
