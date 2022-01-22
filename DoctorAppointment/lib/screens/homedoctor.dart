@@ -1,24 +1,25 @@
 import 'package:doctor_appointment/widget/appbar.dart';
-import 'package:doctor_appointment/widget/drawer.dart';
+import 'package:doctor_appointment/widget/drawer2.dart';
 import 'package:flutter/material.dart';
 import 'package:doctor_appointment/screens/doctor_details.dart';
 import 'package:doctor_appointment/widget/toprated.dart';
 import 'package:doctor_appointment/widget/category.dart';
+import 'package:doctor_appointment/widget/appointmentcard.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class Doctorhome extends StatefulWidget {
+  const Doctorhome({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => HomePageState();
+  State<StatefulWidget> createState() => DoctorhomeState();
 }
 
-class HomePageState extends State<HomePage> {
+class DoctorhomeState extends State<Doctorhome> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Color(0xFF00abff),
-        drawer: Drawers(),
+        drawer: Drawerdoctor(),
         appBar: PreferredSize(
         preferredSize: Size.fromHeight(50.0),
           child: TopBar("Doctor Appointment"),
@@ -38,7 +39,7 @@ class HomePageState extends State<HomePage> {
                     Container(
                       margin: EdgeInsets.only(top: 20, left: 20),
                       child: Text(
-                        "Hi,......",
+                        "Hi,Doctor",
                         
                         style: TextStyle(
                           color: Color(0xff363636),
@@ -119,7 +120,7 @@ class HomePageState extends State<HomePage> {
                         children: [
                           Container(
                             child: Text(
-                              'Category',
+                              'Appointments of the Day',
                               style: TextStyle(
                                 color: Color(0xff363636),
                                 fontSize: 20,
@@ -128,59 +129,30 @@ class HomePageState extends State<HomePage> {
                               ),
                             ),
                           ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 120,
-                      margin: EdgeInsets.only(top: 20, left: 20),
+                            Container(
+                      height: 100,
+                      margin: EdgeInsets.only(top: 30, left: 4),
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
-                          category(
-                              "assets/tooth.png", "Dentistry", "10 Doctors"),
-                          category(
-                              "assets/brain.png", "Neurology", "5 Doctors"),
-                          category(
-                              "assets/bone.png", "Orthopedics", "5 Doctors"),
-                          category("assets/heart.png",
-                              "cardiology and vascular disease", "4 Doctors"),
+                         appointmentcard("assets/teeth.jpg", "Nada Ahmed", "23/1/2022",
+                        "12:00PM", 320),
+                        SizedBox(
+                         height: 5,
+                    ),
+                     appointmentcard("assets/teeth.jpg", "Mariam", "23/1/2022",
+                        "12:40PM", 320),
+                        SizedBox(
+                         height: 5,
+                    ),
                         ],
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5, left: 20),
-                      child: Text(
-                        "Top Rated",
-                        style: TextStyle(
-                          color: Color(0xff363636),
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                        ),
+                    
+                        ],
                       ),
                     ),
-                    toprated("assets/teeth.jpg", "Dr. Nour El Den", "Dentisty",
-                        "4.7", 350),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    toprated("assets/boness.jpg", "Dr. Mohamed zaher",
-                        "Bone Specialist", "4.8", 350),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    toprated("assets/Neurology.PNG", "Dr. Ahmed Zahran",
-                        "Neurology Specialist", "4.4", 350),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    toprated("assets/cardiology.PNG", "Dr. Mohamed Ramadan",
-                        "cardiology disease", "4.1", 350),
-                    SizedBox(
-                      height: 5,
-                    )
-                  ])
-                  
-            ])));
+                   
+                   ] )])));
   }
 }

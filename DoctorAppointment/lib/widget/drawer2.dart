@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Drawers extends StatelessWidget {
-  const Drawers({Key? key}) : super(key: key);
+class Drawerdoctor extends StatelessWidget {
+  const Drawerdoctor({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class Drawers extends StatelessWidget {
           ListTile(
             title: const Text('Home page'),
             onTap: () {
-              Navigator.pushNamed(context,'/home');
+              Navigator.pushNamed(context,'/homedoctor');
             },
           ),
            ListTile(
@@ -32,32 +32,20 @@ class Drawers extends StatelessWidget {
               Navigator.pushNamed(context, '/settings');
             },
           ),
-          ListTile(
-            title: const Text('Edit Profile'),
+          
+       ListTile(
+            title: const Text('View Appointments'),
             onTap: () {
-              Navigator.pushNamed(context, '/editprofile');
+              Navigator.pushNamed(context, '/viewappoint');
             },
           ),
-          ListTile(
-            title: const Text('My Appointment'),
-            onTap: () {
-                Navigator.pushNamed(context, '/appoiment');
-            },
-          ),
-           
            ListTile(
-            title: const Text('Google Map'),
+            title: const Text('Dr profile'),
             onTap: () {
-              Navigator.pushNamed(context,'/map');
+              Navigator.pushNamed(context, '/drprofile');
             },
-          ),
-          ListTile(
-            title: const Text('Rate'),
-            onTap: () {
-              Navigator.pushNamed(context, '/rate');
-            },
-          ),
-         
+          ), 
+        
           ListTile(
             title: const Text('Logout'),
             onTap: () {

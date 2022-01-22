@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:doctor_appointment/model/validator.dart';
+import 'package:doctor_appointment/model/validation.dart';
 import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -35,6 +35,7 @@ FirebaseFirestore firestore = FirebaseFirestore.instance;
         .catchError((error) => print("Failed to add record: $error"));
      notifyListeners();
   }
+  
 
 
   //ValidationItem get dob => _dob;
